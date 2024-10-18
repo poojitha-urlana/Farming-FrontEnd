@@ -1,0 +1,51 @@
+<div class="farm-management">
+  <h1>Farm Management</h1>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <form *ngIf="editingFarm" (ngSubmit)="submitFarm()" #farmForm="ngForm" class="farm-form">
+    <h2>{{ editingFarm.id ? 'Edit Farm' : 'Add Farm' }}</h2>
+    
+    <div>
+      <label for="name">Farm Name:</label>
+      <input type="text" id="name" [(ngModel)]="editingFarm.name" name="name" required />
+    </div>
+
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" [(ngModel)]="editingFarm.location" name="location" required />
+    </div>
+
+    
+
+    <button type="submit">Save Farm</button>
+    <button type="button" (click)="cancelEdit()">Cancel</button>
+  </form>
+
+  <div class="farm-list">
+    <h2>Farm List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Size (acres)</th>
+          <th>Crop Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let farm of farms">
+          <td>{{ farm.name }}</td>
+          <td>{{ farm.location }}</td>
+          <td>
+            <button (click)="editFarm(farm)">Edit</button>
+            <button *ngIf="farm.id !== undefined" (click)="deleteFarm(farm.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="farm-list">
+    <h2 class="farm-title">Available Farms</h2>
+    <div class="farm-container">
+      <div class="farm-card" *ngFor="let farm of farms">
+        <div class="farm-info">
+          <h3 class="farm-name">{{ farm.name }}</h3>
+        </div>
+        <button class="farm-button" (click)="viewFarmDetails(farm.id!)" >View Details</button>
+      </div>
+    </div>
+  </div>
+  

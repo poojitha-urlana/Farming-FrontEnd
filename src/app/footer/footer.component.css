@@ -1,0 +1,27 @@
+footer {
+  background-color: #37414b; /* Dark Blue-Grey */
+  color: #FFFFFF; /* White text */
+  padding: 20px;
+  text-align: center; /* Center-align text */
+  position: relative; /* To position child elements if necessary */
+}
+
+.footer-links {
+  margin-bottom: 10px; /* Space between links and copyright text */
+}
+
+.footer-links a {
+  color: #96be25; /* Green links */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 15px; /* Space between links */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer-links a:hover {
+  color: #D3D3D3; /* Light Gray on hover */
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 14px; /* Smaller font size for copyright text */
+}

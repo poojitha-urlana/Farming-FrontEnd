@@ -1,0 +1,145 @@
+/* Farm Management Container */
+.farm-management-container {
+  padding: 20px;
+  background-color: #F5F5F5; /* Light Gray */
+}
+
+/* Farm Cards Section */
+.farm-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual Farm Card */
+.farm-card {
+  background-color: #FFFFFF; /* White */
+  border: 1px solid #D3D3D3; /* Light Gray */
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.farm-card:hover {
+  transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.farm-card h3 {
+  color: #37414b; /* Dark Blue-Grey */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.farm-card p {
+  color: #37414b;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Farm Actions (Edit/Delete) */
+.farm-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.farm-actions button {
+  background-color: #96be25; /* Green */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.farm-actions button:hover {
+  background-color: #7fa91f; /* Darker green on hover */
+}
+
+/* Add New Farm Button */
+.add-farm {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.add-farm button {
+  background-color: #96be25; /* Green */
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-farm button:hover {
+  background-color: #7fa91f; /* Darker green on hover */
+}
+
+/* Modal-like Form Section */
+.farm-form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Modal background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.farm-form-content {
+  background-color: #FFFFFF;
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+  color: #37414b;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #37414b;
+}
+
+form input:focus {
+  border-color: #96be25; /* Green focus state */
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+form button {
+  background-color: #96be25;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #7fa91f;
+}

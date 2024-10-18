@@ -1,0 +1,99 @@
+/* General styles for the login container */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light Gray */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading style */
+.login-container h2 {
+  text-align: center;
+  color: #37414b; /* Dark Blue-Grey */
+  margin-bottom: 20px;
+}
+
+/* Form group style */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Label style */
+.form-group label {
+  display: block;
+  color: #37414b; /* Dark Blue-Grey */
+  margin-bottom: 5px;
+}
+
+/* Input field style */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d3d3d3; /* Light Gray border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #37414b; /* Dark Blue-Grey */
+  background-color: #fff; /* White background */
+}
+
+/* Focus effect for input fields */
+.form-group input:focus {
+  border-color: #96be25; /* Green */
+  outline: none;
+  box-shadow: 0 0 5px rgba(150, 190, 37, 0.5); /* Green shadow */
+}
+
+/* Submit button style */
+.btn-submit {
+  background-color: #96be25; /* Green */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-submit:hover {
+  background-color: #7fa91d; /* Darker green on hover */
+}
+
+/* Clear button style */
+.btn-clear {
+  background-color: #f5f5f5; /* Light Gray */
+  color: #37414b; /* Dark Blue-Grey */
+  border: 1px solid #d3d3d3; /* Light Gray border */
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.btn-clear:hover {
+  background-color: #d3d3d3; /* Darker gray on hover */
+}
+
+/* Register link styles */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link p {
+  color: #37414b; /* Dark Blue-Grey */
+}
+
+.register-link a {
+  color: #96be25; /* Green */
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}

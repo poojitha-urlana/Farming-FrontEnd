@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="container">
+    <a class="logo" routerLink="/">Smart Farming</a>
+    <nav class="nav">
+      <a class="nav-link" routerLink="/login-user">
+        <fa-icon [icon]="['fas', 'user']"></fa-icon> User Login
+      </a>
+      <a class="nav-link" routerLink="/login-admin">
+        <fa-icon [icon]="['fas', 'user-shield']"></fa-icon> Admin Login
+      </a>
+      <a *ngIf="isLoggedIn" class="nav-link" (click)="logout()">
+        <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout
+      </a>
+    </nav>
+  </div>
+</header>

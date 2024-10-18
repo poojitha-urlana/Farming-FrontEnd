@@ -1,0 +1,55 @@
+.farm-detail {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.farm-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.farm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.farm-properties {
+  margin: 15px 0;
+}
+
+.property {
+  margin: 5px 0;
+}
+
+.sensors-title {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.sensors-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sensor-card {
+  flex: 1 1 200px; /* Adjust based on your layout preference */
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sensor-header {
+  display: flex;
+  align-items: center;
+}
+
+.sensor-icon {
+  margin-right: 8px;
+  font-size: 24px; /* Adjust icon size */
+  color: #4caf50; /* Change to your preferred icon color */
+}

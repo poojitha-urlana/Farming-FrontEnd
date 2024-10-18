@@ -1,0 +1,43 @@
+<div class="farm-detail">
+  <h2 class="farm-title">Farm Details</h2>
+  <div *ngIf="farm" class="farm-info">
+    <div class="farm-header">
+      <h3>{{ farm.name }}</h3>
+      <p class="farm-location"><strong>Location:</strong> {{ farm.location }}</p>
+    </div>
+
+    <div class="farm-properties">
+      <div class="property">
+        <p><strong>Area:</strong> {{ farm.area }} acres</p>
+      </div>
+      <div class="property">
+        <p><strong>Crop Name:</strong> {{ farm.cropName }}</p>
+      </div>
+      <div class="property">
+        <p><strong>Soil Type:</strong> {{ farm.soilType }}</p>
+      </div>
+      <div class="property">
+        <p><strong>Crop Status:</strong> {{ farm.cropStatus }}</p>
+      </div>
+      <div class="property">
+        <p><strong>Created At:</strong> {{ farm.createdAt | date }}</p>
+      </div>
+      <div class="property">
+        <p><strong>Updated At:</strong> {{ farm.updatedAt | date }}</p>
+      </div>
+    </div>
+
+    <h4 class="sensors-title">Sensors:</h4>
+    <div class="sensors-container">
+      <div *ngFor="let sensor of farm.sensors" class="sensor-card">
+        <div class="sensor-header">
+          <mat-icon class="sensor-icon" [ngClass]="getSensorIcon(sensor.type)"></mat-icon>
+          <h5>{{ sensor.type }}</h5>
+        </div>
+        <div class="sensor-details">
+          <p><strong>Value:</strong> {{ sensor.value }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
