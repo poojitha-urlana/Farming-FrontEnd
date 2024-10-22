@@ -1,51 +1,22 @@
-<div class="farm-management">
-  <h1>Farm Management</h1>
+<div class="farm-container">
+  <h2 class="farm-title">Farm List</h2>
 
-  <div *ngIf="errorMessage" class="error-message">
-    {{ errorMessage }}
-  </div>
-
-  <form *ngIf="editingFarm" (ngSubmit)="submitFarm()" #farmForm="ngForm" class="farm-form">
-    <h2>{{ editingFarm.id ? 'Edit Farm' : 'Add Farm' }}</h2>
-    
-    <div>
-      <label for="name">Farm Name:</label>
-      <input type="text" id="name" [(ngModel)]="editingFarm.name" name="name" required />
+  <div class="farm-grid">
+    <div class="farm-card" *ngFor="let farm of farms">
+      <div class="farm-card-body">
+        <h5 class="farm-card-title">{{ farm.name }}</h5>
+        <p class="farm-card-text"><strong>ID:</strong> {{ farm.farmId }}</p>
+        <p class="farm-card-text"><strong>Location:</strong> {{ farm.location }}</p>
+        <p class="farm-card-text"><strong>Area:</strong> {{ farm.area }} acres</p>
+        <p class="farm-card-text"><strong>Soil Type:</strong> {{ farm.soilType }}</p>
+        <p class="farm-card-text"><strong>Crop Name:</strong> {{ farm.cropName }}</p>
+        <p class="farm-card-text"><strong>Status:</strong> {{ farm.status }}</p>
+        <p class="farm-card-text"><strong>Farm Size:</strong> {{ farm.farmSize }}</p>
+      </div>
+      <div class="farm-card-footer">
+        <button class="farm-button edit" (click)="editFarm(farm.farmId)">Edit</button>
+        <button class="farm-button delete" (click)="deleteFarm(farm.farmId)">Delete</button>
+      </div>
     </div>
-
-    <div>
-      <label for="location">Location:</label>
-      <input type="text" id="location" [(ngModel)]="editingFarm.location" name="location" required />
-    </div>
-
-    
-
-    <button type="submit">Save Farm</button>
-    <button type="button" (click)="cancelEdit()">Cancel</button>
-  </form>
-
-  <div class="farm-list">
-    <h2>Farm List</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Size (acres)</th>
-          <th>Crop Type</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let farm of farms">
-          <td>{{ farm.name }}</td>
-          <td>{{ farm.location }}</td>
-          <td>
-            <button (click)="editFarm(farm)">Edit</button>
-            <button *ngIf="farm.id !== undefined" (click)="deleteFarm(farm.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </div>

@@ -13,6 +13,7 @@ import { DashBoardAdminComponent } from './dash-board-admin/dash-board-admin.com
 import { UserFarmListComponent } from './user-farm-list/user-farm-list.component';
 import { FarmsComponent } from './farms/farms.component';
 import { CropHealthComponent } from './crop-health/crop-health.component';
+import { EditFarmComponent } from './edit-farm/edit-farm.component';
 
 
 export const routes: Routes = [
@@ -30,6 +31,7 @@ export const routes: Routes = [
     { path: 'farms', component: FarmsComponent },
     { path: 'farms/:id', component: FarmsComponent },
     { path: 'crop-health', component: CropHealthComponent },
+    {path: 'edit-farm/:id', component: EditFarmComponent},
     { path: '**', redirectTo: '', pathMatch: 'full' }, // Catch-all for unknown routes
 ];
 

@@ -1,6 +1,6 @@
-import { SensorType } from "./sensor-type";
 export interface SensorData {
-  type: SensorType;
-  value: number;
-  unit: string;
+  id: number;
+  temperature: number;
+  humidity: number;
+  waterContent: number;
 }

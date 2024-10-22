@@ -12,52 +12,29 @@ export class FarmService {
 
   constructor(private http: HttpClient) {}
 
+
   // Get all farms
   getAllFarms(): Observable<Farm[]> {
-    return this.http.get<Farm[]>(this.apiUrl).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.get<Farm[]>(this.apiUrl);
   }
 
   // Get farm by ID
   getFarmById(id: number): Observable<Farm> {
-    return this.http.get<Farm>(`${this.apiUrl}/${id}`).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.get<Farm>(`${this.apiUrl}/${id}`);
   }
 
   // Create a new farm
   createFarm(farm: Farm): Observable<Farm> {
-    return this.http.post<Farm>(this.apiUrl, farm, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.post<Farm>(this.apiUrl, farm);
   }
 
-  // Update an existing farm
+  // Update a farm
   updateFarm(id: number, farm: Farm): Observable<Farm> {
-    return this.http.put<Farm>(`${this.apiUrl}/${id}`, farm, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.put<Farm>(`${this.apiUrl}/${id}`, farm);
   }
 
   // Delete a farm
   deleteFarm(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
-      catchError(this.handleError)
-    );
-  }
-
-  // Handle HTTP errors
-  private handleError(error: any) {
-    console.error('An error occurred:', error);  // Log to console instead
-    return throwError('Something bad happened; please try again later.');
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

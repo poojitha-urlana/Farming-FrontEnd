@@ -13,34 +13,35 @@ import { PredictionService } from '../Services/prediction.service';
 })
 export class CropHealthComponent {
   selectedFile: File | null = null;
-  predictionResult: any = null;
-  errorMessage: string | null = null;
+  prediction: string | null = null;
+  error: string | null = null;
 
-  constructor(private predictionService: PredictionService) {}
+  constructor(private PredictionService: PredictionService) { }
 
-  // Event handler when the file is selected
-  onFileSelected(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
+  // Method to handle file selection
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
     }
   }
 
-  // Form submission handler
+  // Method to submit the image for prediction
   onSubmit(): void {
     if (this.selectedFile) {
-      this.predictionService.predictDisease(this.selectedFile).subscribe({
-        next: (result: any) => {
-          this.predictionResult = result;
-          this.errorMessage = null;  // Reset error message on success
-        },
-        error: (error: string) => {
-          this.errorMessage = error;
-          this.predictionResult = null;  // Reset result on error
-        }
-      });
+      this.PredictionService.predictDisease(this.selectedFile)
+        .subscribe(
+          (response) => {
+            this.prediction = response.prediction;
+            this.error = null;
+          },
+          (error) => {
+            this.error = 'Error predicting the disease: ' + error;
+            this.prediction = null;
+          }
+        );
     } else {
-      this.errorMessage = 'Please select a file before submitting!';
+      this.error = 'Please select an image file.';
     }
   }
 }

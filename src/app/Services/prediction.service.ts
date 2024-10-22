@@ -8,32 +8,33 @@ import { throwError, Observable } from 'rxjs';
 })
 export class PredictionService {
 
-  private baseUrl = 'http://localhost:8899/api/crop/predict';  // Spring Boot URL
+  private apiUrl = 'http://localhost:8899/api/crop/predict';  // Spring Boot API URL
 
   constructor(private http: HttpClient) { }
 
-  // Method to upload image and get prediction
-  predictDisease(image: File): Observable<any> {
+  // Method to send the image file for prediction
+  predictDisease(imageFile: File): Observable<any> {
     const formData: FormData = new FormData();
-    formData.append('image', image);
+    formData.append('image', imageFile);
 
-    // Expecting text response from the server
-    return this.http.post(this.baseUrl, formData, { responseType: 'text' })
+    // HTTP headers are automatically set for form-data
+    return this.http.post(this.apiUrl, formData)
       .pipe(
-        catchError(this.handleError)
+        catchError(this.handleError)  // Error handling
       );
   }
 
-  // Handle errors
+  // Error handling
   private handleError(error: HttpErrorResponse) {
-    let errorMessage = 'Unknown error occurred!';
     if (error.error instanceof ErrorEvent) {
-      // Client-side error
-      errorMessage = `Error: ${error.error.message}`;
+      // Client-side or network error occurred
+      console.error('An error occurred:', error.error.message);
     } else {
-      // Server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      // Backend returned an unsuccessful response code
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
     }
-    return throwError(errorMessage);
+    return throwError('Something went wrong; please try again later.');
   }
 }

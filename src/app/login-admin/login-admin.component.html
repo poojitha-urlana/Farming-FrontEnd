@@ -1,46 +1,16 @@
+<!-- admin-login.component.html -->
 <div class="login-container">
   <h2>Admin Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="input-data">
+  <form (submit)="onLogin()">
+    <div>
       <label for="username">Username:</label>
-      <div class="input-icon">
-        <fa-icon [icon]="faUser"></fa-icon>
-        <input
-          id="username"
-          formControlName="username"
-          type="text"
-          [ngClass]="{
-            'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched
-          }"
-        />
-      </div>
-      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="invalid-feedback">
-        Username is required.
-      </div>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
     </div>
-
-    <div class="input-data">
+    <div>
       <label for="password">Password:</label>
-      <div class="input-icon">
-        <fa-icon [icon]="faLock"></fa-icon>
-        <input
-          id="password"
-          formControlName="password"
-          type="password"
-          [ngClass]="{
-            'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched
-          }"
-        />
-      </div>
-      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
-        Password is required.
-      </div>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
     </div>
-
-    <button type="submit" [disabled]="isLoading">
-      <fa-icon [icon]="faSignInAlt"></fa-icon> Login
-    </button>
-
-    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    <button type="submit">Login</button>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
   </form>
 </div>

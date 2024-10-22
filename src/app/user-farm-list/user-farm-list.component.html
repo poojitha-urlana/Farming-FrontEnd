@@ -1,12 +1,31 @@
 <div class="farm-list">
-    <h2 class="farm-title">Available Farms</h2>
-    <div class="farm-container">
-      <div class="farm-card" *ngFor="let farm of farms">
-        <div class="farm-info">
-          <h3 class="farm-name">{{ farm.name }}</h3>
-        </div>
-        <button class="farm-button" (click)="viewFarmDetails(farm.id!)" >View Details</button>
-      </div>
-    </div>
-  </div>
-  
+  <h2>Farm List</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Area</th>
+        <th>Soil Type</th>
+        <th>Crop Name</th>
+        <th>Status</th>
+        <th>Farm Size</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let farm of farms">
+        <td>{{ farm.farmId }}</td>
+        <td>{{ farm.name }}</td>
+        <td>{{ farm.location }}</td>
+        <td>{{ farm.area }}</td>
+        <td>{{ farm.soilType }}</td>
+        <td>{{ farm.cropName }}</td>
+        <td>{{ farm.status }}</td>
+        <td>{{ farm.farmSize }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

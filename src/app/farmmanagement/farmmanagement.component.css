@@ -1,145 +1,90 @@
-/* Farm Management Container */
-.farm-management-container {
-  padding: 20px;
-  background-color: #F5F5F5; /* Light Gray */
+.farm-container {
+  max-width: 1200px; /* Max width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Padding around the container */
 }
 
-/* Farm Cards Section */
-.farm-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.farm-title {
+  text-align: center; /* Center the title */
+  margin-bottom: 30px; /* Space below the title */
+  font-size: 2em; /* Title size */
+  color: #37414b; /* Dark Blue-Grey for the title */
 }
 
-/* Individual Farm Card */
+.farm-grid {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Allow cards to wrap */
+  gap: 20px; /* Space between cards */
+}
+
 .farm-card {
-  background-color: #FFFFFF; /* White */
-  border: 1px solid #D3D3D3; /* Light Gray */
-  border-radius: 10px;
-  padding: 15px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.farm-card:hover {
-  transform: translateY(-5px); /* Slight lift effect on hover */
-}
-
-.farm-card h3 {
-  color: #37414b; /* Dark Blue-Grey */
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.farm-card p {
-  color: #37414b;
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* Farm Actions (Edit/Delete) */
-.farm-actions {
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #D3D3D3; /* Light Gray border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: calc(33.33% - 20px); /* Width for three cards per row */
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-direction: column; /* Column layout inside the card */
 }
 
-.farm-actions button {
-  background-color: #96be25; /* Green */
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.farm-card-body {
+  padding: 20px; /* Padding inside the card body */
 }
 
-.farm-actions button:hover {
-  background-color: #7fa91f; /* Darker green on hover */
+.farm-card-title {
+  font-size: 1.5em; /* Title size */
+  color: #37414b; /* Dark Blue-Grey for titles */
+  margin-bottom: 10px; /* Space below title */
 }
 
-/* Add New Farm Button */
-.add-farm {
-  margin-top: 20px;
-  text-align: center;
+.farm-card-text {
+  margin: 5px 0; /* Space between text lines */
 }
 
-.add-farm button {
-  background-color: #96be25; /* Green */
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.farm-card-footer {
+  display: flex; /* Flexbox for footer */
+  justify-content: center; /* Center buttons */
+  padding: 10px; /* Padding for footer */
+  background-color: #F5F5F5; /* Light Gray background */
+  border-top: 1px solid #D3D3D3; /* Top border */
 }
 
-.add-farm button:hover {
-  background-color: #7fa91f; /* Darker green on hover */
+.farm-button {
+  padding: 10px 15px; /* Button padding */
+  margin: 0 5px; /* Space between buttons */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 0.9em; /* Button font size */
 }
 
-/* Modal-like Form Section */
-.farm-form-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Modal background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.edit {
+  background-color: #96be25; /* Green for edit button */
+  color: #ffffff; /* White text */
 }
 
-.farm-form-content {
-  background-color: #FFFFFF;
-  padding: 30px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.delete {
+  background-color: #dc3545; /* Red for delete button */
+  color: #ffffff; /* White text */
 }
 
-form label {
-  color: #37414b;
-  font-size: 14px;
-  margin-bottom: 5px;
-  display: block;
+.edit:hover {
+  background-color: #85a020; /* Darker green on hover */
 }
 
-form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #D3D3D3;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #37414b;
+.delete:hover {
+  background-color: #c82333; /* Darker red on hover */
 }
 
-form input:focus {
-  border-color: #96be25; /* Green focus state */
-  outline: none;
+/* Optional: Add media queries for responsiveness */
+@media (max-width: 768px) {
+  .farm-card {
+    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
 }
 
-.form-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-form button {
-  background-color: #96be25;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #7fa91f;
+@media (max-width: 480px) {
+  .farm-card {
+    width: 100%; /* Full width on very small screens */
+  }
 }

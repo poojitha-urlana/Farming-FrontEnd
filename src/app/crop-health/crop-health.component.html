@@ -1,66 +1,24 @@
 <div class="container">
-  <h2>Predict Crop Disease</h2>
+  <h2>Crop Disease Prediction</h2>
+
+  <!-- Form to upload image -->
   <form (ngSubmit)="onSubmit()">
     <div>
-      <label for="image" title="Upload an image of the crop">Upload Image:</label>
-      <input type="file" id="image" (change)="onFileSelected($event)" accept="image/*" required>
+      <label for="imageUpload">Upload an Image:</label> <!-- Added a label -->
+      <input id="imageUpload" type="file" (change)="onFileSelected($event)" accept="image/*" title="Select an image for crop disease prediction"> <!-- Added id and title -->
     </div>
-    <button type="submit" [disabled]="!selectedFile">Get Prediction</button>
+    <button type="submit" [disabled]="!selectedFile">Predict</button>
   </form>
 
 
-  <div *ngIf="predictionResult" class="result">
-    <h3>Prediction Result:</h3>
-    <p>{{ predictionResult }}</p>
+  <!-- Display the prediction result -->
+  <div *ngIf="prediction" class="prediction-result">
+    <h3>Prediction:</h3>
+    <p>{{ prediction }}</p>
   </div>
 
-  
-  <div *ngIf="errorMessage" class="error">
-    <p>{{ errorMessage }}</p>
+  <!-- Display error message -->
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
   </div>
 </div>
-
-
-
-<!-- another method  -->
-
-<!-- <div class="container">
-  <h2>Predict Crop Disease</h2>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="image" title="Upload an image of the crop">Upload Image:</label>
-      <input type="file" id="image" (change)="onFileSelected($event)" accept="image/*" required>
-    </div>
-    <button type="submit" [disabled]="!selectedFile">Get Prediction</button>
-  </form>
-
-  
-  <div *ngIf="predictionResult" class="result">
-    <h3>Prediction Result:</h3>
-    <div *ngIf="predictionResult">
-
-    
-      
-        <p>{{ predictionResult }}</p>
-      
-      <p><strong>Disease Name:</strong> {{ predictionResult.diseaseName }}</p>
-      <p><strong>Solution:</strong> {{ predictionResult.solution }}</p>
-      <p><strong>Prevention:</strong> {{ predictionResult.prevention }}</p>
-      <p><strong>Treatment:</strong> {{ predictionResult.treatment }}</p>
-      <p><strong>Severity:</strong> {{ predictionResult.severity }}</p>
-      <p><strong>Treatment Duration:</strong> {{ predictionResult.treatmentDuration }}</p>
-      <p><strong>Cost of Treatment:</strong> {{ predictionResult.costOfTreatment }}</p>
-      <p><strong>Success Rate:</strong> {{ predictionResult.successRate }}</p>
-      <p><strong>Common in Conditions:</strong> {{ predictionResult.commonInConditions }}</p>
-      <p><strong>Expert Contact:</strong> {{ predictionResult.expertContact }}</p>
-      <p><strong>Organic Treatment:</strong> {{ predictionResult.organicTreatment }}</p>
-      <p><strong>Chemical Treatment:</strong> {{ predictionResult.chemicalTreatment }}</p>
-      <p><strong>Regional Variations:</strong> {{ predictionResult.regionalVariations }}</p>
-    </div>
-  </div>
-
-  
-  <div *ngIf="errorMessage" class="error">
-    <p>{{ errorMessage }}</p>
-  </div>
-</div> -->

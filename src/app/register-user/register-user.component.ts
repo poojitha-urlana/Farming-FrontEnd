@@ -1,60 +1,39 @@
-// RegisterUserComponent
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { UserService } from '../Services/user.service'; // Import your UserService
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-register-user',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './register-user.component.html',
-  styleUrls: ['./register-user.component.css'] // Corrected 'styleUrl' to 'styleUrls'
+  styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent {
   user = {
-    fullName: '',
     username: '',
-    email: '',
     password: '',
+    email: '',
+    fullName: '',
     confirmPassword: ''
   };
 
-  constructor(private userService: UserService, private router: Router) {} // Inject UserService
+  errorMessage: string = '';
 
-  onSubmit() {
-    if (this.user.password !== this.user.confirmPassword) {
-        alert('Passwords do not match');
-        return;
-    }
+  constructor(private userService: UserService, private router: Router) {}
 
-    // Prepare the user object for registration
-    const userToRegister = {
-        username: this.user.username,
-        password: this.user.password,
-        email: this.user.email,
-        fullName: this.user.fullName
-    };
-
-    this.userService.registerUser(userToRegister).subscribe(
-        response => {
-            console.log('User registered successfully:', response);
-            this.router.navigate(['/dash-board-user']);
-        },
-        error => {
-            console.error('Registration failed:', error);
-            let errorMessage = 'Registration failed: Please try again.';
-    
-            // Attempt to parse the error response if it is JSON
-            try {
-                errorMessage = error.error.message || errorMessage;
-            } catch (e) {
-                console.error('Error parsing response:', e);
-            }
-    
-            alert(errorMessage);
-        }
+  register() {
+    this.userService.registerUser(this.user).subscribe(
+      (response) => {
+        console.log('Registration successful:', response);
+        this.router.navigate(['/dash-board-user']);  
+      },
+      (error) => {
+        console.error('Registration failed:', error);
+        this.errorMessage = 'Registration failed. Please try again.';
+      }
     );
-}
+  }
 }

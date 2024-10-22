@@ -26,7 +26,7 @@ export class LoginUserComponent {
   onSubmit() {
     this.userService.loginUser(this.credentials).subscribe({
       next: (response) => {
-        this.router.navigate(['/dash-board-user']); // Redirect to dashboard after login
+        this.router.navigate(['/dash-board-user']); 
       },
       error: (err) => {
         alert('Login failed: ' + err.error.message);

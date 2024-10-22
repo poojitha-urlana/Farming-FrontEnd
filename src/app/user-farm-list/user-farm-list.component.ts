@@ -19,34 +19,16 @@ export class UserFarmListComponent implements OnInit {
 
   constructor(private farmService: FarmService, private router: Router) {}
 
+  
   ngOnInit(): void {
-    this.loadFarms();
+    this.getFarms();
   }
 
-  loadFarms(): void {
-    this.farmService.getAllFarms().subscribe(
-      (data: Farm[]) => {
-        this.farms = data;
-      },
-      error => {
-        console.error('Error loading farms', error);
-      }
-    );
-  }
-
-  viewFarmDetails(id: number | undefined): void {
-    console.log('Attempting to navigate to farm with ID:', id); // Log the ID
-    if (id !== undefined) {
-      this.router.navigate(['/farms', id]).then(success => {
-        if (success) {
-          console.log('Navigation successful!');
-        } else {
-          console.error('Navigation failed!');
-        }
-      });
-    } else {
-      console.error('Farm ID is undefined');
-    }
+  // Get all farms
+  getFarms(): void {
+    this.farmService.getAllFarms().subscribe((data: Farm[]) => {
+      this.farms = data;
+    });
   }
   
   
