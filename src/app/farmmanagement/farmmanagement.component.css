@@ -69,14 +69,14 @@
 }
 
 .edit:hover {
-  background-color: #85a020; /* Darker green on hover */
+  background-color: #85a020; 
 }
 
 .delete:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333; 
 }
 
-/* Optional: Add media queries for responsiveness */
+
 @media (max-width: 768px) {
   .farm-card {
     width: calc(50% - 20px); /* Two cards per row on smaller screens */

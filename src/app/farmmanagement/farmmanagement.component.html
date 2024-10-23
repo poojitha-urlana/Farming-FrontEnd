@@ -1,22 +1,22 @@
 <div class="farm-container">
   <h2 class="farm-title">Farm List</h2>
 
+  
   <div class="farm-grid">
     <div class="farm-card" *ngFor="let farm of farms">
       <div class="farm-card-body">
         <h5 class="farm-card-title">{{ farm.name }}</h5>
         <p class="farm-card-text"><strong>ID:</strong> {{ farm.farmId }}</p>
         <p class="farm-card-text"><strong>Location:</strong> {{ farm.location }}</p>
-        <p class="farm-card-text"><strong>Area:</strong> {{ farm.area }} acres</p>
-        <p class="farm-card-text"><strong>Soil Type:</strong> {{ farm.soilType }}</p>
-        <p class="farm-card-text"><strong>Crop Name:</strong> {{ farm.cropName }}</p>
-        <p class="farm-card-text"><strong>Status:</strong> {{ farm.status }}</p>
-        <p class="farm-card-text"><strong>Farm Size:</strong> {{ farm.farmSize }}</p>
       </div>
       <div class="farm-card-footer">
         <button class="farm-button edit" (click)="editFarm(farm.farmId)">Edit</button>
         <button class="farm-button delete" (click)="deleteFarm(farm.farmId)">Delete</button>
       </div>
     </div>
+    <!-- Add Farm Button -->
+  <button class="farm-button add" (click)="navigateToAddFarm()">Add Farm</button>
+
   </div>
+
 </div>
