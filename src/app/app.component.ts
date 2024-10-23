@@ -38,7 +38,7 @@ export class AppComponent {
 
           // Update checks to ensure proper sidebar visibility
           this.showUserSidebar = ['/dash-board-user', '/user-farm-list', '/crop-health', '/farms', '/farms/:id'].some(path => currentUrl.startsWith(path)) || currentUrl.includes('/farms/');
-          this.showAdminSidebar = ['/dash-board-admin', '/farmmanagement', '/user-management', '/edit-farm'].some(path => currentUrl.startsWith(path));
+          this.showAdminSidebar = ['/dash-board-admin', '/farmmanagement', '/user-management', '/edit-farm' ,'/add-farm' ].some(path => currentUrl.startsWith(path));
           this.showFooter =[
             '/dash-board-user', '/user-farm-list',
              '/crop-health', '/farms', '/farms/:id',

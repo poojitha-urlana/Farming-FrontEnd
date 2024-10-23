@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FarmService } from '../Services/farm.service';
 import { Farm } from '../Models/farm';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-farmmanagement',
@@ -16,8 +16,7 @@ import { Router } from '@angular/router'; // Import Router
 export class FarmmanagementComponent implements OnInit {
   farms: Farm[] = [];
 
-  // Inject Router along with FarmService
-  constructor(private farmService: FarmService, private router: Router) { }
+  constructor(private farmService: FarmService, private router: Router) {}
 
   ngOnInit(): void {
     this.getFarms();
@@ -29,15 +28,18 @@ export class FarmmanagementComponent implements OnInit {
     });
   }
 
-  // Delete farm by ID
   deleteFarm(id: number): void {
     this.farmService.deleteFarm(id).subscribe(() => {
       this.farms = this.farms.filter(farm => farm.farmId !== id);
     });
   }
 
-  // Navigate to edit-farm component by farmId
   editFarm(farmId: number): void {
     this.router.navigate(['/edit-farm', farmId]);
+  }
+
+  // Navigate to add farm component
+  navigateToAddFarm(): void {
+    this.router.navigate(['/add-farm']);
   }
 }

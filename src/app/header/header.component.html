@@ -4,7 +4,7 @@
       <img class="logofarm" src="../../assets/farmLogo.png" alt="img" /> Smart Farming System
     </a>
     <nav class="nav">
-      <!-- Display login links if the user is not logged in -->
+     
       <a
         class="nav-link"
         *ngIf="!(authService.isLoggedIn$ | async)"
@@ -20,12 +20,12 @@
         <fa-icon [icon]="['fas', 'user-shield']"></fa-icon> Admin Login
       </a>
 
-      <!-- Display logout link if the user is logged in -->
+    
       <a *ngIf="authService.isLoggedIn$ | async" class="nav-link" (click)="authService.logout()">
         <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout
       </a>
 
-      <!-- Display user details if logged in -->
+    
       <div class="user" *ngIf="authService.isLoggedIn$ | async">
         <div class="user-name">{{ authService.username$ | async  }}</div>
       </div>

@@ -1,0 +1,57 @@
+<h2>Add New Farm</h2>
+<div class="add-farm-container">
+    <form (ngSubmit)="onSubmit()" #farmForm="ngForm">
+      <!-- Farm Details Section -->
+      <div class="form-section">
+        <h3>Farm Details</h3>
+        <div class="form-group">
+          <label for="name">Farm Name:</label>
+          <input type="text" id="name" required [(ngModel)]="farm.name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input type="text" id="location" required [(ngModel)]="farm.location" name="location" />
+        </div>
+        <div class="form-group">
+          <label for="area">Area (in acres):</label>
+          <input type="number" id="area" required [(ngModel)]="farm.area" name="area" />
+        </div>
+      </div>
+
+      <!-- Soil and Crop Information Section -->
+      <div class="form-section">
+        <h3>Soil and Crop Information</h3>
+        <div class="form-group">
+          <label for="soilType">Soil Type:</label>
+          <input type="text" id="soilType" required [(ngModel)]="farm.soilType" name="soilType" />
+        </div>
+        <div class="form-group">
+          <label for="cropName">Crop Name:</label>
+          <input type="text" id="cropName" required [(ngModel)]="farm.cropName" name="cropName" />
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select id="status" required [(ngModel)]="farm.status" name="status">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+            <option value="Harvested">Harvested</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Additional Details Section -->
+      <div class="form-section">
+        <h3>Additional Details</h3>
+        <div class="form-group">
+          <label for="farmSize">Farm Size:</label>
+          <input type="text" id="farmSize" required [(ngModel)]="farm.farmSize" name="farmSize" />
+        </div>
+        <!-- Additional fields for sensors or other details can go here -->
+      </div>
+
+      <!-- Submit Button Section -->
+      <div class="form-actions">
+        <button type="submit">Add Farm</button>
+      </div>
+    </form>
+</div>
