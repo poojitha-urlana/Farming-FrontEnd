@@ -1,99 +1,142 @@
-/* General styles for the login container */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 .login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5; /* Light Gray */
+  width: 500px;
+  margin: 100px auto;
+  padding: 40px 40px;
+  background-color: #FFFFFF;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Heading style */
 .login-container h2 {
+  color: transparent; 
+  font-size: 2em;
   text-align: center;
-  color: #37414b; /* Dark Blue-Grey */
   margin-bottom: 20px;
+  background: -webkit-linear-gradient(right, #96be25, #85a91c, #37414b, #96be25);
+  -webkit-background-clip: text;
+  background-clip: text; 
+  font-weight: 600;
 }
 
-/* Form group style */
-.form-group {
-  margin-bottom: 15px;
+.login-container .input-data {
+  position: relative;
+  margin-bottom: 30px;
 }
 
-/* Label style */
-.form-group label {
-  display: block;
-  color: #37414b; /* Dark Blue-Grey */
-  margin-bottom: 5px;
+.login-container input[type="text"], 
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  color: #37414b;
 }
 
-/* Input field style */
-.form-group input {
+.login-container input[type="text"]:focus, 
+.login-container input[type="password"]:focus {
+  border-color: #96be25; 
+}
+
+.login-container input[type="text"]:valid ~ label,
+.login-container input[type="password"]:valid ~ label,
+.login-container input[type="text"]:valid ~ .bar,
+.login-container input[type="password"]:valid ~ .bar{
+  transform: translateY(-23px);
+  background-color: #FFFFFF;
+  font-size: 14px;
+  color: #96be25;
+}
+
+.login-container label {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  color: #37414b;
+}
+
+/* Button Styles */
+.login-container button {
   width: 100%;
   padding: 10px;
-  border: 1px solid #d3d3d3; /* Light Gray border */
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 14px;
-  color: #37414b; /* Dark Blue-Grey */
-  background-color: #fff; /* White background */
-}
-
-/* Focus effect for input fields */
-.form-group input:focus {
-  border-color: #96be25; /* Green */
-  outline: none;
-  box-shadow: 0 0 5px rgba(150, 190, 37, 0.5); /* Green shadow */
-}
-
-/* Submit button style */
-.btn-submit {
-  background-color: #96be25; /* Green */
-  color: #fff; /* White text */
+  background: linear-gradient(to right, #85a91c, #37414b);
   border: none;
-  padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
-  width: 100%;
   font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+  color: #FFFFFF;
 }
 
-.btn-submit:hover {
-  background-color: #7fa91d; /* Darker green on hover */
+.login-container button .inner {
+  position: absolute;
+  height: 100%;
+  width: 300%;
+  left: -100%;
+  background: linear-gradient(to right, #37414b, #85a91c, #37414b);
+  transition: all 0.4s;
+  z-index: 1;
 }
 
-/* Clear button style */
-.btn-clear {
-  background-color: #f5f5f5; /* Light Gray */
-  color: #37414b; /* Dark Blue-Grey */
-  border: 1px solid #d3d3d3; /* Light Gray border */
-  padding: 10px 15px;
-  border-radius: 4px;
+.login-container button:hover .inner {
+  left: 0;
+}.btn-clear{
+  background-color: azure;
+}
+
+/* Button text styling */
+.login-container button .input-data input {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
-  width: 100%;
-  font-size: 16px;
-  margin-top: 10px;
+  position: relative;
+  z-index: 2;
 }
 
-.btn-clear:hover {
-  background-color: #d3d3d3; /* Darker gray on hover */
+.login-container button:active {
+  opacity: 0.7;
 }
 
-/* Register link styles */
-.register-link {
+/* Link styling */
+.login-container a {
+  color: #96be25;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+  color: #85a91c;
+}
+
+.login-container p {
   text-align: center;
   margin-top: 20px;
+  color: #37414b;
 }
-
-.register-link p {
-  color: #37414b; /* Dark Blue-Grey */
-}
-
-.register-link a {
-  color: #96be25; /* Green */
-  text-decoration: none;
-}
-
-.register-link a:hover {
-  text-decoration: underline;
+a{
+  cursor: pointer;
 }

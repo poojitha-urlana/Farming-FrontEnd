@@ -1,12 +1,19 @@
-<div class="user-management">
+<div class="container">
   <h2>User Management</h2>
-  <div>
-    <h3>All Users</h3>
-    <ul>
-      <li *ngFor="let user of users">
-        {{ user.fullName }} ({{ user.email }})
-        <button (click)="deleteUser(user.id)">Delete</button> 
-      </li>
-    </ul>
-  </div>
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">User ID</div>
+      <div class="col col-2">Full Name</div>
+      <div class="col col-3">Email</div>
+      <div class="col col-4">Actions</div>
+    </li>
+    <li class="table-row" *ngFor="let user of users">
+      <div class="col col-1" data-label="User ID">{{ user.id }}</div>
+      <div class="col col-2" data-label="Full Name">{{ user.fullName }}</div>
+      <div class="col col-3" data-label="Email">{{ user.email }}</div>
+      <div class="col col-4" data-label="Actions">
+        <button (click)="deleteUser(user.id)" class="deleteUser">Delete</button>
+      </div>
+    </li>
+  </ul>
 </div>

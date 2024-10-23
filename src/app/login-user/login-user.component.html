@@ -1,18 +1,18 @@
 <div class="login-container">
   <h2>Login</h2>
   <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="username">Username</label>
+    <div class="input-data">
       <input type="text" id="username" [(ngModel)]="credentials.username" name="username" required />
+      <label for="username">Username</label>
     </div>
 
-    <div class="form-group">
-      <label for="password">Password</label>
+    <div class="input-data">
       <input type="password" id="password" [(ngModel)]="credentials.password" name="password" required />
+      <label for="password">Password</label>
     </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn-submit">Login</button>
+    <div class="input-data">
+      <button type="submit" class="btn-submit">Login</button><br/><br/>
       <button type="button" class="btn-clear" (click)="onClear()">Clear</button> <!-- Clear Button -->
     </div>
   </form>

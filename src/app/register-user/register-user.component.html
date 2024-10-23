@@ -1,23 +1,29 @@
-<form (ngSubmit)=" register()">
-  <div>
-    <label for="fullName">Full Name</label>
-    <input type="text" id="fullName" [(ngModel)]="user.fullName" name="fullName" required>
+<section class="section">
+<form (ngSubmit)="register()" class="register-container">
+  <h2>User Registration</h2>
+  <div class="input-data">
+    <input type="text" id="firstName" [(ngModel)]="user.fullName" name="fullName" required>
+    <label for="firstName">Full Name</label>
   </div>
-  <div>
-    <label for="username">Username</label>
-    <input type="text" id="username" [(ngModel)]="user.username" name="username" required>
+  <div class="input-data">
+    <input type="text" id="lastName" [(ngModel)]="user.username" name="username" required>
+    <label for="lastName">Username</label>
   </div>
-  <div>
-    <label for="email">Email</label>
+  <div class="input-data">
     <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+    <label for="email">Email</label>
   </div>
-  <div>
-    <label for="password">Password</label>
+  <div class="input-data">
     <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+    <label for="password">Password</label>
   </div>
-  <div>
-    <label for="confirmPassword">Confirm Password</label>
+  <div class="input-data">
     <input type="password" id="confirmPassword" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+    <label for="confirmPassword">Confirm Password</label>
   </div>
-  <button type="submit">Register</button>
+  <button type="submit" class="submit-btn">Register</button>
+  <p>
+    Already have an account? <a routerLink="/login-user">Login</a>
+  </p>
 </form>
+</section>

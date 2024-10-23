@@ -3,6 +3,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #F5F5F5;
+  transition: background-color 1s ease;
+  animation: fadeIn 1.5s ease-in-out;
+  line-height: 1.618;
   color: #37414b;
 }
 p {
@@ -16,7 +19,7 @@ img {
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(rgba(86, 87, 42, 0.5), rgba(236, 240, 187, 0)), url('/assets/farmBg.png') no-repeat center center;
+  background: linear-gradient(rgba(86, 87, 42, 0.5), rgba(236, 240, 187, 0)), url('/assets/farm.jpg') no-repeat center center;
   background-size: cover;
   width: 100%;
   height: 90vh;
@@ -134,7 +137,6 @@ img {
 .feature-item {
   margin: 30px 10px;
   width: 200px;
-
   background-color: #96be25;
   padding:  30px 10px ;
   border-radius: 10px;
@@ -153,8 +155,6 @@ img {
 
 .feature-item:hover {
   border: #fff solid 3px;
-  box-shadow:0 0 25px #fff,
-             0 0 30px #dbdada;
   transform: translateY(-10px);
 }
 

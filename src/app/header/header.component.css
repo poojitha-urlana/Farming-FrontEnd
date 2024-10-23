@@ -30,9 +30,9 @@
   margin-right: 0px;
 }.logofarm{
   width: 70px;
-  height: 70px;
+  height: auto;      
   border-radius: 50%;
- margin-right: 0px;
+  margin-right: 10px;   
 }
 .user-image{
   width:  50px;
@@ -48,10 +48,11 @@
 }
 /* Logo */
 .logo {
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
+  display: flex;           /* Use flexbox to align items in a row */
+  align-items: center;      /* Align items vertically at the center */
+  font-size: 24px;          /* Adjust font size as needed */
+  text-decoration: none;    /* Remove underline from the link */
+  color: white;        
 }
 
 /* Navigation */

@@ -2,15 +2,15 @@
 <div class="login-container">
   <h2>Admin Login</h2>
   <form (submit)="onLogin()">
-    <div>
-      <label for="username">Username:</label>
+    <div class="input-data">
       <input type="text" id="username" [(ngModel)]="username" name="username" required>
+      <label for="username">Username:</label>
     </div>
-    <div>
-      <label for="password">Password:</label>
+    <div  class="input-data"> 
       <input type="password" id="password" [(ngModel)]="password" name="password" required>
+      <label for="password">Password:</label>
     </div>
-    <button type="submit">Login</button>
+    <button type="submit" class="submit-btn">Login</button>
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
   </form>
 </div>
