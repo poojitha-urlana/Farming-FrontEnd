@@ -1,87 +1,87 @@
 /* Header */
 .header {
-    background-color: #37414b; /* Blue-green (dark blue-grey) */
-    padding: 20px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #37414b; /* Blue-green (dark blue-grey) */
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Container to center the content */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#image{
+  width: 50px;
+  height: 50px;
+
+}
+.user{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 0px;
+}.logofarm{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+ margin-right: 0px;
+}
+.user-image{
+  width:  50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: rgb(11, 107, 185);
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+/* Logo */
+.logo {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Navigation Links */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+  color: #96be25; /* Green on hover */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
   }
-  a{
-    cursor: pointer;
-  }
-  /* Container to center the content */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #image{
-    width: 60px;
-    height: 50px;
-    margin-right: 30px;
-  }
-  .user{
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 0px;
-  }
-  .user-image{
-    width:  50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background-color: rgb(11, 107, 185);
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
-  /* Logo */
-  .logo {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  /* Navigation */
+
   .nav {
-    display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  /* Navigation Links */
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  /* Hover effect for navigation links */
-  .nav-link:hover {
-    color: #96be25; /* Green on hover */
-  }
-  
-  /* Responsive for smaller screens */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-    }
-  
-    .nav {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .logo {
-      margin-bottom: 10px;
-    }
-  }
-  
+
+ 
+}

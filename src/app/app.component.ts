@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SidenavbarAdminComponent } from './sidenavbar-admin/sidenavbar-admin.component';
 import { SidenavbarUserComponent } from './sidenavbar-user/sidenavbar-user.component';
 import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
-import { MatButtonModule } from '@angular/material/button'; // Import MatButtonModule
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,6 +22,7 @@ export class AppComponent {
   title = 'angular-app';
   showUserSidebar: boolean = false;
   showAdminSidebar: boolean = false;
+  showFooter: boolean = true; 
 
   constructor(private router: Router) {} // Inject Router here
 
@@ -38,6 +39,12 @@ export class AppComponent {
           // Update checks to ensure proper sidebar visibility
           this.showUserSidebar = ['/dash-board-user', '/user-farm-list', '/crop-health', '/farms', '/farms/:id'].some(path => currentUrl.startsWith(path)) || currentUrl.includes('/farms/');
           this.showAdminSidebar = ['/dash-board-admin', '/farmmanagement', '/user-management', '/edit-farm'].some(path => currentUrl.startsWith(path));
+          this.showFooter =[
+            '/dash-board-user', '/user-farm-list',
+             '/crop-health', '/farms', '/farms/:id',
+             '/dash-board-admin','/farmmanagement', 
+             '/user-management', '/edit-farm'
+            ].some(path => currentUrl.startsWith(path)) ;
       }
     });
   }

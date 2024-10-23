@@ -13,11 +13,12 @@ import {
   faSeedling, 
   faChartLine 
 } from '@fortawesome/free-solid-svg-icons';  // Importing all necessary icons
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule,FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../Services/auth.service';
+import { AuthService } from '../Services/auth.service'; // Import AuthService
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -15,24 +15,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  // Declare authService first
-  constructor(private router: Router, library: FaIconLibrary) {
-    library.addIconPacks(fas); // Add all solid icons
+  username: string | null = null; // Local property to hold the username
+
+  constructor(
+    private router: Router,
+    library: FaIconLibrary,
+    public authService: AuthService
+  ) {
+    library.addIconPacks(fas);
   }
 
-  isLoggedIn: boolean = false; // Change this based on your authentication logic
-
-
-  // Call this method when user logs in
-  login() {
-    this.isLoggedIn = true;
+  ngOnInit(): void {
+    // Subscribe to username observable and store locally for template access
+    this.authService.username$.subscribe({
+      next: (name) => {
+        console.log('Username received:', name);
+        this.username = name;
+      },
+      error: (err) => console.error('Error in username subscription', err),
+    });
   }
 
-  // Call this method on logout
+  // Method to handle logout
   logout() {
-    this.isLoggedIn = false;
-    // Perform additional logout logic, such as clearing tokens
-    this.router.navigate(['/login-user']); // Redirect to the login page
+    this.authService.logout();
+    this.router.navigate(['/login-user']); // Redirect after logout
   }
-
 }
