@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators'; // Add the tap import
@@ -11,9 +12,10 @@ export class AdminService {
 
   // Admin login state
   private adminLoggedIn = new BehaviorSubject<boolean>(false);
+  
   adminLoggedIn$ = this.adminLoggedIn.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router:Router) {}
 
   // Admin login
   adminLogin(username: string, password: string): Observable<any> {
@@ -29,6 +31,8 @@ export class AdminService {
   adminLogout() {
     this.adminLoggedIn.next(false);
     console.log('Admin logged out');
+
+    this.router.navigate(['']);
   }
 
   // Error handler method

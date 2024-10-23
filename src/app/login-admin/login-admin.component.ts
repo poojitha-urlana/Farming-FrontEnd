@@ -25,18 +25,32 @@ export class LoginAdminComponent {
 
   constructor(private adminLoginService: AdminService, private router: Router) { }
 
-  onLogin() {
-    this.adminLoginService.adminLogin(this.username, this.password)
-      .subscribe({
-        next: (response) => {
-          console.log('Login successful:', response);
-          // Redirect to admin dashboard or handle successful login
-          this.router.navigate(['/dash-board-admin']);
-        },
-        error: (error) => {
-          console.error('Login failed:', error);
-          this.errorMessage = 'Invalid username or password';
-        }
-      });
+  // onLogin() {
+  //   this.adminLoginService.adminLogin(this.username, this.password)
+  //     .subscribe({
+  //       next: (response) => {
+  //         console.log('Login successful:', response);
+  //         // Redirect to admin dashboard or handle successful login
+  //         this.router.navigate(['/dash-board-admin']);
+  //       },
+  //       error: (error) => {
+  //         console.error('Login failed:', error);
+  //         this.errorMessage = 'Invalid username or password';
+  //       }
+  //     });
+
+      onLogin() {
+        this.adminLoginService.adminLogin(this.username, this.password).subscribe({
+          next: (response) => {
+            console.log('Admin login successful:', response);
+            // Redirect to admin dashboard or handle successful login
+            this.router.navigate(['/dash-board-admin']);
+          },
+          error: (error) => {
+            console.error('Admin login failed:', error);
+            this.errorMessage = 'Invalid username or password';
+          }
+        });
+      }
+      
   }
-}

@@ -1,31 +1,29 @@
-<div class="farm-list">
+<div class="container">
   <h2>Farm List</h2>
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Area</th>
-        <th>Soil Type</th>
-        <th>Crop Name</th>
-        <th>Status</th>
-        <th>Farm Size</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let farm of farms">
-        <td>{{ farm.farmId }}</td>
-        <td>{{ farm.name }}</td>
-        <td>{{ farm.location }}</td>
-        <td>{{ farm.area }}</td>
-        <td>{{ farm.soilType }}</td>
-        <td>{{ farm.cropName }}</td>
-        <td>{{ farm.status }}</td>
-        <td>{{ farm.farmSize }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">ID</div>
+        <div class="col col-1">Name</div>
+        <div class="col col-1">Location</div>
+        <div class="col col-1">Area</div>
+        <div class="col col-1">Soil Type</div>
+        <div class="col col-1">Crop Name</div>
+        <div class="col col-1">Status</div>
+        <div class="col col-1">Farm Size</div>
+        <!-- <div class="col col-1">Actions</div> -->
+      </li>
+
+      <li *ngFor="let farm of farms" class="table-row" >
+        <div class="col col-1">{{ farm.farmId }}</div>
+        <div class="col col-1">{{ farm.name }}</div>
+        <div class="col col-1">{{ farm.location }}</div>
+        <div class="col col-1">{{ farm.area }}</div>
+        <div class="col col-1">{{ farm.soilType }}</div>
+        <div class="col col-1">{{ farm.cropName }}</div>
+        <div class="col col-1">{{ farm.status }}</div>
+        <div class="col col-1">{{ farm.farmSize }}</div>
+      </li>
+    
+  </ul>
 </div>

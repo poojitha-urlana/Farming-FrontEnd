@@ -1,15 +1,26 @@
 .container {
-  width: 50%;
-  margin: 0 auto;
+  width: 70%;
+  margin-top: 50px;
+  margin-left: 15%;
   padding: 20px;
-  background-color: #f5f5f5;
+  display: grid;
+  grid-template-columns:  3fr 1fr; /* Two equal columns */
+    gap: 20px; 
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.image-container{
+  height: auto;
+}.image{
+  width: 400px;
+  height: auto;
+  margin-left: 0px;
+}
 h2 {
   text-align: center;
   color: #37414b;
+  font-size: 34px;
 }
 
 form {
@@ -65,6 +76,10 @@ button:hover:not([disabled]) {
 
 .result a:hover {
   color: #84a622;
+}
+#imageUpload {
+  margin-top: 20px;
+
 }
 
 .error {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../Services/auth.service'; // Import AuthService
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminService } from '../Services/admin.service';
 
 @Component({
   selector: 'app-header',
@@ -20,7 +21,9 @@ export class HeaderComponent {
   constructor(
     private router: Router,
     library: FaIconLibrary,
-    public authService: AuthService
+    public authService: AuthService,
+    public adminService:AdminService,
+    private cdr: ChangeDetectorRef // Inject ChangeDetectorRef
   ) {
     library.addIconPacks(fas);
   }
@@ -38,7 +41,18 @@ export class HeaderComponent {
 
   // Method to handle logout
   logout() {
-    this.authService.logout();
-    this.router.navigate(['/login-user']); // Redirect after logout
+    if (this.authService.isLoggedIn$) {
+      console.log('Logging out user...');
+      this.authService.logout();
+    } else if (this.adminService.adminLoggedIn$) {
+      console.log('Logging out admin...');
+      this.adminService.adminLogout();
+    } else {
+      console.log('Neither user nor admin is logged in.');
+    }
+  
+    this.cdr.detectChanges();
   }
+  
+  
 }

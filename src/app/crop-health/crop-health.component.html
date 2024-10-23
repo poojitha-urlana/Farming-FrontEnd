@@ -1,8 +1,8 @@
 <div class="container">
-  <h2>Crop Disease Prediction</h2>
 
   <!-- Form to upload image -->
   <form (ngSubmit)="onSubmit()">
+    <h2>Crop Disease Prediction</h2>
     <div>
       <label for="imageUpload">Upload an Image:</label> <!-- Added a label -->
       <input id="imageUpload" type="file" (change)="onFileSelected($event)" accept="image/*" title="Select an image for crop disease prediction"> <!-- Added id and title -->
@@ -10,7 +10,9 @@
     <button type="submit" [disabled]="!selectedFile">Predict</button>
   </form>
 
-
+  <div class="image-container">
+    <img src="assets/Design.png" alt="img"  class="image">
+  </div>
   <!-- Display the prediction result -->
   <div *ngIf="prediction" class="prediction-result">
     <h3>Prediction:</h3>

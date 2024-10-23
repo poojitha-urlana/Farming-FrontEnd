@@ -1,78 +1,91 @@
-.farm-list {
+body {
+    font-family: 'lato', sans-serif;
+  }
+  .container {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.farm-title {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  h2 {
+    font-size: 26px;
+    margin: 20px 0;
     text-align: center;
-    font-size: 28px;
-    color: #37414b; /* Dark blue-grey */
-    margin-bottom: 30px;
-}
-
-.farm-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.farm-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #d3d3d3; /* Light gray border */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 280px; /* Card width */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.farm-card:hover {
-    transform: translateY(-8px); /* Lifts the card on hover */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-}
-
-.farm-info {
-    margin-bottom: 15px;
-}
-
-.farm-name {
-    font-size: 20px;
-    color: #96be25; /* Green for the farm name */
-    margin-bottom: 10px;
-}
-
-.farm-location, .farm-size {
-    font-size: 16px;
-    color: #37414b; /* Dark blue-grey text */
-    margin: 5px 0;
-}
-
-.farm-button {
-    background-color: #96be25;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.farm-button:hover {
-    background-color: #82a520; /* Darker green on hover */
-}
-
-@media (max-width: 768px) {
-    .farm-container {
-        flex-direction: column;
-        align-items: center;
+    small {
+      font-size: 0.5em;
     }
-
-    .farm-card {
-        width: 100%; /* Full width on mobile */
-        max-width: 400px;
+  }
+  
+  .responsive-table {
+    li {
+      border-radius: 3px;
+      padding: 15px 10px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
     }
-}
+    .table-header {
+      background-color: #2f3b0c;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .table-row {
+      background-color: #ffffff;
+      box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    }
+    .col-1 {
+      flex-basis: 10%;
+    }
+    .col-2 {
+      flex-basis: 30%;
+    }
+    .col-3 {
+      flex-basis: 35%;
+    }
+    .col-4 {
+      flex-basis: 25%;
+    }
+    .deleteUser{
+      margin-left: 10px;
+      background-color: #96be25;
+      color: white;
+      box-shadow: none;
+      border: none;
+      width: 100px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+    
+    @media all and (max-width: 767px) {
+      .table-header {
+        display: none;
+      }
+      .table-row{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+      .col {
+        display: flex;
+        padding: 10px 0;
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      }
+    }
+  }

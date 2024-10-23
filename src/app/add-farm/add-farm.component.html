@@ -1,8 +1,12 @@
-<h2>Add New Farm</h2>
 <div class="add-farm-container">
-    <form (ngSubmit)="onSubmit()" #farmForm="ngForm">
+  <h2>Add New Farm</h2>
+  <form (ngSubmit)="onSubmit()" #farmForm="ngForm">
+
+    <!-- Row for Farm Details and Soil/Crop Information -->
+    <div class="form-row">
+      
       <!-- Farm Details Section -->
-      <div class="form-section">
+      <div class="form-section farm-details">
         <h3>Farm Details</h3>
         <div class="form-group">
           <label for="name">Farm Name:</label>
@@ -19,7 +23,7 @@
       </div>
 
       <!-- Soil and Crop Information Section -->
-      <div class="form-section">
+      <div class="form-section soil-crop-info">
         <h3>Soil and Crop Information</h3>
         <div class="form-group">
           <label for="soilType">Soil Type:</label>
@@ -39,19 +43,22 @@
         </div>
       </div>
 
-      <!-- Additional Details Section -->
-      <div class="form-section">
-        <h3>Additional Details</h3>
-        <div class="form-group">
-          <label for="farmSize">Farm Size:</label>
-          <input type="text" id="farmSize" required [(ngModel)]="farm.farmSize" name="farmSize" />
-        </div>
-        <!-- Additional fields for sensors or other details can go here -->
-      </div>
+    </div> <!-- End of form-row -->
 
-      <!-- Submit Button Section -->
-      <div class="form-actions">
-        <button type="submit">Add Farm</button>
+    <!-- Additional Details Section -->
+    <div class="form-section">
+      <h3>Additional Details</h3>
+      <div class="form-group">
+        <label for="farmSize">Farm Size:</label>
+        <input type="text" id="farmSize" required [(ngModel)]="farm.farmSize" name="farmSize" />
       </div>
-    </form>
+      <!-- Additional fields for sensors or other details can go here -->
+    </div>
+
+    <!-- Submit Button Section -->
+    <div class="form-actions">
+      <button type="submit">Add Farm</button>
+    </div>
+
+  </form>
 </div>
