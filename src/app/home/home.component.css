@@ -1,13 +1,4 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #F5F5F5;
-  transition: background-color 1s ease;
-  animation: fadeIn 1.5s ease-in-out;
-  line-height: 1.618;
-  color: #37414b;
-}
+
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -111,7 +102,7 @@ img {
   background-color: #37414b;
   color: white;
   padding: 20px;
-  height: auto; 
+  height: 700px; 
 }
 
 .advanced-features h2 {
@@ -150,72 +141,43 @@ img {
   font-size: 14px;
 }
 
-.feature-item:hover {
+/* .feature-item:hover {
   border: #fff solid 3px;
   transform: translateY(-10px);
-}
+} */
 
 .fa-icon {
-  font-size: 56px; /* Adjust this value for larger icons */
+  font-size: 56px; 
   color: white;
 }
 
-/* .main-features{
-
-}
-.fea{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  margin: 20px;
-  padding: 20px;
-  gap: 10px;
-}
-.fea-img img{
-  width: 500px;
-  height: auto;
-} */
-
-
-/* General styles for the features section */
 
 
 .features-section h2 {
   font-size: 2.5rem;
-  color: #37414b; /* Dark Blue-Grey for the title */
+  color: #37414b; 
   margin-bottom: 40px;
 }
-
-/* .main-features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-} */
+.main-features{
+  margin: 90px;
+}
 
 .fea {
   display: flex;
-
- 
   flex-direction: row;
-  background-color: #ffffff; /* White background */
-  overflow: hidden;
+  background-color: #ffffff; 
+  gap: 20px;
   width: 100%;
-  max-width: 1000px;
-  transition: transform 0.3s ease-in-out;
-  opacity: 0; 
+ 
 }
 
 .fea-img img {
-  width: 600px; /* Adjust to your preferred size */
+  width: 900px; 
   height: auto;
-  object-fit: cover;
   border-radius: 5px;
-  margin: 10px;
 }
 
-/* Feature content styling */
+
 .fea-content {
   padding: 20px;
   text-align: left;
@@ -223,48 +185,16 @@ img {
 
 .fea-content h3 {
   font-size: 1.8rem;
-  color: #96be25; /* Green for feature titles */
-  margin-bottom: 10px;
+  color: #96be25; 
+  margin: 20px;
 }
 
 .fea-content p {
+  margin-top: 20px;
+  padding-top: 10px;
   font-size: 1rem;
-  color: #37414b; /* Dark Blue-Grey for descriptions */
+  color: #37414b; 
 }
-
-/* Scrolling animations */
-.fea.left {
-  animation: slideInLeft 1s ease-out forwards;
-}
-
-.fea.right {
-  animation: slideInRight 1s ease-out forwards;
-}
-
-/* Keyframes for sliding in animation */
-@keyframes slideInLeft {
-  0% {
-      transform: translateX(-100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-      transform: translateX(100%);
-      opacity: 0;
-  }
-  100% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-}
-
-
 
 .about-us-section {
   background-color: #FFFFFF;
@@ -337,13 +267,13 @@ img {
   color: white;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .features-grid,
   .feature-grid,
@@ -538,3 +468,5 @@ img {
     font-size: 1.8em; 
   }
 }
+
+
