@@ -37,7 +37,7 @@
   }
   
   .sidenav a:focus, .sidenav a.active {
-    background-color: #37414b; 
-    color: #FFFFFF;
+    background-color: #FFFFFF; 
+    color: #37414b;
   }
   
