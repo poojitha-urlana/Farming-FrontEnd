@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+// import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { FooterComponent } from '../footer/footer.component';
 
 import { 
@@ -20,7 +20,7 @@ import {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, FooterComponent, AnimateOnScrollModule],
+  imports: [CommonModule, FontAwesomeModule, FooterComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
