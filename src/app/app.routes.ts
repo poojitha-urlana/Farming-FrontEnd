@@ -15,10 +15,12 @@ import { FarmsComponent } from './farms/farms.component';
 import { CropHealthComponent } from './crop-health/crop-health.component';
 import { EditFarmComponent } from './edit-farm/edit-farm.component';
 import { AddFarmComponent } from './add-farm/add-farm.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'user-profile', component: UserProfileComponent },
     { path: 'login-user', component: LoginUserComponent },
     { path: 'login-admin', component: LoginAdminComponent },
     { path: 'register-user', component: RegisterUserComponent },

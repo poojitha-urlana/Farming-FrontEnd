@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>User Account </h2>
+  
+    <div *ngIf="user">
+      <div class="card"> 
+        <h3>{{ user.fullName }}</h3>
+        <p><strong>Name:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <!-- <p><strong>Password:</strong> {{ user.password }}</p>
+        <p><strong>Confirm Password:</strong> {{ user.confirmPassword }}</p> -->
+      </div>
+    </div>
+    <div *ngIf="!user">
+      <p>Loading user details...</p>
+    </div>
+  </div>
+  

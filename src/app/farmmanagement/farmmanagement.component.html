@@ -10,13 +10,11 @@
         <p class="farm-card-text"><strong>Location:</strong> {{ farm.location }}</p>
       </div>
       <div class="farm-card-footer">
-        <button class="farm-button edit" (click)="editFarm(farm.farmId)">Edit</button>
+        <button class="farm-button edit" (click)="editFarm(farm.farmId)">Edit-Farm</button>
         <button class="farm-button delete" (click)="deleteFarm(farm.farmId)">Delete</button>
       </div>
     </div>
-    <!-- Add Farm Button -->
-  <button class="farm-button add" (click)="navigateToAddFarm()">Add Farm</button>
 
-  </div>
-
+  </div><br/><br/>
+  <button class="farm-btn add" (click)="navigateToAddFarm()">Add Farm</button>
 </div>
