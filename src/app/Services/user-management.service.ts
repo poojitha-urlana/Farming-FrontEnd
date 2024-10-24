@@ -47,6 +47,7 @@ export class UserManagementService {
     return this.http.delete<any>(`${this.apiUrl}/${userId}`, { headers })
       .pipe(catchError(this.handleError));
   }
+  
 
   // Private method to get authorization headers with Basic Authentication
   private getAuthHeaders(): HttpHeaders {
