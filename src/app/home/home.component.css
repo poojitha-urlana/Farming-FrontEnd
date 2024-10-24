@@ -1,13 +1,4 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #F5F5F5;
-  transition: background-color 1s ease;
-  animation: fadeIn 1.5s ease-in-out;
-  line-height: 1.618;
-  color: #37414b;
-}
+
 p {
   font-size: 16px;
   line-height: 1.5;
@@ -17,15 +8,13 @@ img {
   max-width: 100%;
 }
 
-/* Hero Section */
+
 .hero-section {
   background: linear-gradient(rgba(86, 87, 42, 0.5), rgba(236, 240, 187, 0)), url('/assets/farm.jpg') no-repeat center center;
   background-size: cover;
   width: 100%;
-  height: 90vh;
   color: #fff;
   text-align: center;
-  padding: 120px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +48,7 @@ img {
   color: white;
 }
 
-/* Key Features Section */
+
 .features-section {
   background-color: #FFFFFF;
   text-align: center;
@@ -108,12 +97,12 @@ img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Advanced Features Section */
+
 .advanced-features {
   background-color: #37414b;
   color: white;
   padding: 20px;
-  height: auto; 
+  height: 700px; 
 }
 
 .advanced-features h2 {
@@ -131,7 +120,6 @@ img {
 
 .feature-grid {
   display: flex;
-  gap: 10px;
 }
 
 .feature-item {
@@ -153,18 +141,61 @@ img {
   font-size: 14px;
 }
 
-.feature-item:hover {
+/* .feature-item:hover {
   border: #fff solid 3px;
   transform: translateY(-10px);
-}
+} */
 
 .fa-icon {
-  font-size: 56px; /* Adjust this value for larger icons */
+  font-size: 56px; 
   color: white;
 }
 
 
-/* About Us Section */
+
+.features-section h2 {
+  font-size: 2.5rem;
+  color: #37414b; 
+  margin-bottom: 40px;
+}
+.main-features{
+  margin: 90px;
+}
+
+.fea {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff; 
+  gap: 20px;
+  width: 100%;
+ 
+}
+
+.fea-img img {
+  width: 900px; 
+  height: auto;
+  border-radius: 5px;
+}
+
+
+.fea-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.fea-content h3 {
+  font-size: 1.8rem;
+  color: #96be25; 
+  margin: 20px;
+}
+
+.fea-content p {
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 1rem;
+  color: #37414b; 
+}
+
 .about-us-section {
   background-color: #FFFFFF;
   padding: 60px 20px;
@@ -181,7 +212,7 @@ img {
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-/* Testimonials Section */
+
 .testimonials-section {
   background-color: #96be25;
   color: white;
@@ -207,7 +238,7 @@ img {
   margin: 0;
 }
 
-/* CTA Section */
+
 .cta-section {
   background-color: #37414b;
   color: white;
@@ -236,13 +267,13 @@ img {
   color: white;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .features-grid,
   .feature-grid,
@@ -437,3 +468,5 @@ img {
     font-size: 1.8em; 
   }
 }
+
+
