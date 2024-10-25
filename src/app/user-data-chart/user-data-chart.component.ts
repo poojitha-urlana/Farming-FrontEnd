@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import HC_accessibility from 'highcharts/modules/accessibility';
 import { UserManagementService } from '../Services/user-management.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
-
-HC_accessibility(Highcharts); // Initialize the accessibility module
 
 @Component({
   selector: 'app-user-data-chart',
@@ -18,6 +15,7 @@ HC_accessibility(Highcharts); // Initialize the accessibility module
 export class UserDataChartComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   chartOptions: Highcharts.Options = {};
+  dataLoaded: boolean = false; // Declare the dataLoaded property
 
   constructor(private userManagementService: UserManagementService) {}
 
@@ -27,14 +25,15 @@ export class UserDataChartComponent implements OnInit {
 
   fetchUserData(): void {
     this.userManagementService.getAllUsers().subscribe((users) => {
-      console.log(users); // Log the users data
+      console.log('Fetched users:', users);
       this.createChart(users);
+      this.dataLoaded = true; // Set dataLoaded to true once data is fetched
     });
   }
 
   createChart(users: any[]): void {
-    const userCount = users.length; // Total number of users
-  
+    const userCount = users.length;
+    
     this.chartOptions = {
       chart: {
         type: 'column'
@@ -43,7 +42,7 @@ export class UserDataChartComponent implements OnInit {
         text: 'Number of Registered Users'
       },
       accessibility: {
-        enabled: false // Disable accessibility features
+        enabled: true
       },
       xAxis: {
         categories: ['Users'],
@@ -61,9 +60,11 @@ export class UserDataChartComponent implements OnInit {
         {
           type: 'column',
           name: 'Users',
-          data: [userCount]
+          data: [userCount] 
         }
       ]
     };
+    console.log('User count:', userCount);
+    console.log('Chart options:', this.chartOptions);
   }
 }
