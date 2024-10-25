@@ -25,9 +25,12 @@
         <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout
       </a>
 
-      <!-- Display user details if user is logged in -->
+      <!-- Display user details with hover effect to show profile -->
       <div class="user" *ngIf="authService.isLoggedIn$ | async">
-        <div class="user-name" [routerLink]="['/dash-board-user']">{{ authService.username$ | async }}</div>
+        <div class="user-name" (mouseenter)="showProfile = true" (mouseleave)="showProfile = false">
+          {{ authService.username$ | async }}
+        </div>
+        <app-profile-card *ngIf="showProfile"></app-profile-card>
       </div>
 
       <!-- Display admin details if admin is logged in -->
