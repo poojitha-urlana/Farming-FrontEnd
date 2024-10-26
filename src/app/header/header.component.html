@@ -21,21 +21,30 @@
       </a>
 
       <!-- Display logout link if the user or admin is logged in -->
-      <a *ngIf="(authService.isLoggedIn$ | async) || (adminService.adminLoggedIn$ | async)" class="nav-link" (click)="logout()">
+      <!-- <a *ngIf="(authService.isLoggedIn$ | async)" class="nav-link" (click)="logout()">
+        <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout
+      </a> -->
+      <a *ngIf="(adminService.adminLoggedIn$ | async)" class="nav-link" (click)="login()">
         <fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout
       </a>
 
       <!-- Display user details with hover effect to show profile -->
       <div class="user" *ngIf="authService.isLoggedIn$ | async">
-        <div class="user-name" (mouseenter)="showProfile = true" (mouseleave)="showProfile = false">
+        <div 
+          class="user-name" 
+          (mouseenter)="showProfileCard()" 
+          (mouseleave)="hideProfileCard()"
+        >
           {{ authService.username$ | async }}
+          <img src="../../assets/user.png" alt="profile" class="img">
         </div>
         <app-profile-card *ngIf="showProfile"></app-profile-card>
       </div>
+      
 
       <!-- Display admin details if admin is logged in -->
       <div class="admin" *ngIf="adminService.adminLoggedIn$ | async">
-        <div class="admin-name" [routerLink]="['/dash-board-admin']">Admin</div>
+        <div class="user-name" [routerLink]="['/dash-board-admin']">Admin <img src="../../assets/user.png" alt="profile" class="img"></div>
       </div>
     </nav>
   </div>

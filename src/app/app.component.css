@@ -3,18 +3,6 @@
     display: flex; /* Use flexbox to align sidebar and content horizontally */
     height: 100vh; /* Full height to match the viewport */
   }
-  
-  /* Sidebar styles */
-  .dashboard-navbar {
-    background-color: #96be25; /* Green background */
-    color: #FFFFFF; /* White text */
-    width: 250px; /* Fixed width for the sidebar */
-    padding-top: 60px; /* Space for header */
-    height: 90vh; /* Full height of the viewport */
-    overflow-y: auto; /* Scroll if content exceeds the height */
-  }
-  
-  
   .main-content {
     flex-grow: 1; /* Take up remaining space after the sidebar */
     background-color: #F5F5F5; /* Light gray background */
