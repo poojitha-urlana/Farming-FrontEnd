@@ -17,9 +17,11 @@ import { EditFarmComponent } from './edit-farm/edit-farm.component';
 import { AddFarmComponent } from './add-farm/add-farm.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserDataChartComponent } from './user-data-chart/user-data-chart.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'profile-user', component: ProfileCardComponent },
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'user-chart', component: UserDataChartComponent },
     { path: 'login-user', component: LoginUserComponent },

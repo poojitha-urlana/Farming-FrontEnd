@@ -60,6 +60,17 @@
   display: flex;
   gap: 20px;
 }
+.user-profile {
+  position: absolute;
+  top: 60px; /* Adjust according to header height */
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  width: 300px;
+  border-radius: 8px;
+}
 
 /* Navigation Links */
 .nav-link {
