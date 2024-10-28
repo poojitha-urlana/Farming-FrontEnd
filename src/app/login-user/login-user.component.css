@@ -1,15 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+
+.main-block {
+  background-image: url('../../assets/farm1\ \(2\).png'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .login-container {
   width: 500px;
-  margin: 100px auto;
+  margin: 200px auto;
   padding: 40px 40px;
   background-color: #FFFFFF;
   border-radius: 8px;
@@ -70,7 +75,7 @@
   color: #37414b;
 }
 
-/* Button Styles */
+
 .login-container button {
   width: 100%;
   padding: 10px;
@@ -103,7 +108,7 @@
   background-color: azure;
 }
 
-/* Button text styling */
+
 .login-container button .input-data input {
   background: none;
   border: none;
@@ -121,7 +126,7 @@
   opacity: 0.7;
 }
 
-/* Link styling */
+
 .login-container a {
   color: #96be25;
   text-decoration: none;
@@ -139,4 +144,30 @@
 }
 a{
   cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .login-container {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 1.5em;
+  }
+
+  .login-container button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-container h2 {
+    font-size: 1.2em;
+  }
 }

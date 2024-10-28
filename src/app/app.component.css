@@ -4,9 +4,9 @@
     height: 100vh; 
   }
   .main-content {
-    flex-grow: 1; /* Take up remaining space after the sidebar */
-    background-color: #F5F5F5; /* Light gray background */
-    transition: margin-left 0.3s; /* Smooth transition for animations */
+    flex-grow: 1; 
+    background-color: #F5F5F5; 
+    transition: margin-left 0.3s; 
   }
   
   

@@ -21,6 +21,12 @@ export class HeaderComponent {
   showProfile: boolean = false; // Controls visibility of profile component
 profileHideTimeout: any;
 
+isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
 showProfileCard() {
   this.showProfile = true;
   if (this.profileHideTimeout) {
