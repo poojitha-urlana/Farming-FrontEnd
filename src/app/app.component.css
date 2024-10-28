@@ -1,4 +1,4 @@
-
+/* 
 .dashboard-container {
     
     height: 100vh; 
@@ -10,4 +10,22 @@
   }
   
   
+   */
+
+   .dashboard-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    flex-direction: row; /* Places sidebars and main content side by side */
+  }
+  
+  .dashboard-navbar {
+    width: 250px; /* Adjust width as needed for sidebar */
+  }
+  
+  .main-content {
+    flex-grow: 1; /* Takes up remaining space */
+    
+    padding: 20px; /* Optional padding for main content */
+    transition: margin-left 0.3s;
+  }
   
