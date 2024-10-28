@@ -19,6 +19,21 @@ import { ProfileCardComponent } from '../profile-card/profile-card.component';
 export class HeaderComponent {
   username: string | null = null;
   showProfile: boolean = false; // Controls visibility of profile component
+profileHideTimeout: any;
+
+showProfileCard() {
+  this.showProfile = true;
+  if (this.profileHideTimeout) {
+    clearTimeout(this.profileHideTimeout); // Clear any existing timeout to avoid flickering
+  }
+}
+
+hideProfileCard() {
+  this.profileHideTimeout = setTimeout(() => {
+    this.showProfile = false;
+  }, 2000); // 2000ms delay (2 seconds)
+}
+
 
   constructor(
     private router: Router,
@@ -43,9 +58,12 @@ export class HeaderComponent {
   logout() {
     if (this.authService.isLoggedIn$) {
       this.authService.logout();
-    } else if (this.adminService.adminLoggedIn$) {
+    } 
+    this.cdr.detectChanges();
+  }
+  login(){
+    if (this.adminService.adminLoggedIn$) {
       this.adminService.adminLogout();
     }
-    this.cdr.detectChanges();
   }
 }

@@ -1,11 +1,34 @@
-<div class="container">
-    <nav class="sidenav">
-      <a routerLink="/home"><fa-icon [icon]="faHome"></fa-icon> Home</a>
-      <a routerLink="/account"><fa-icon [icon]="faUser"></fa-icon> Account</a>
-      <a routerLink="/farmmanagement"><fa-icon [icon]="faTractor"></fa-icon> Farms Mangement</a>
-      <a routerLink="/user-management"><fa-icon [icon]="faUsers"></fa-icon> User Management</a>
-      <a routerLink="/crop-health"><fa-icon [icon]="faSeedling"></fa-icon> Crop Health</a>
-      <a routerLink="/settings"><fa-icon [icon]="faCog"></fa-icon> Settings</a>
-      <a routerLink="/logout"><fa-icon [icon]="faSignOutAlt"></fa-icon> Logout</a>
-    </nav>
-</div>
+<nav class="nav__cont">
+  <ul class="nav">
+    <li class="nav__items">
+      <fa-icon [icon]="faHome" class="svg"></fa-icon>
+      <a routerLink="/home">Home</a>
+    </li>
+    <li class="nav__items">
+      <fa-icon [icon]="faUsers" class="svg"></fa-icon>
+      <a routerLink="/user-management">User Management</a>
+    </li>
+    <li class="nav__items">
+      <fa-icon [icon]="faTractor" class="svg"></fa-icon>
+      <a routerLink="/farmmanagement">Farm Management</a>
+    </li>
+    <li class="nav__items">
+      <fa-icon [icon]="faSeedling" class="svg"></fa-icon>
+      <a routerLink="/crop-health">Crop Health</a>
+    </li>
+    <li class="nav__items">
+      <fa-icon [icon]="faCog" class="svg"></fa-icon>
+      <a routerLink="/settings">Settings</a>
+    </li>
+    <li class="nav__items">
+      <fa-icon [icon]="faSignOutAlt" class="svg"></fa-icon>
+      <a routerLink="/logout">Logout</a>
+    </li>
+  </ul>
+</nav>
+<div class="wrapper">
+  <main>
+   
+    </main>
+  </div>
+  

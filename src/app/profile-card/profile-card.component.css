@@ -6,11 +6,12 @@ body {
     position: absolute;
     transform: translate(-30%, -50%);
     background-color: transparent;
+    z-index: 200;
 }
 
 .container {
-    height: 455px;
-    width: 330px;
+    height: 390px;
+    width: 230px;
     box-shadow: 0 10px 20px black;
     background-size: cover;
     background-color: #fff;
@@ -20,6 +21,7 @@ body {
     text-align: center;
     overflow: hidden;
     font-family: 'Abel', sans-serif;
+    z-index: 150;
 }
 
 .image {
@@ -29,14 +31,14 @@ body {
     border-radius: 50%;
     border: 8px solid white;
     position: relative;
-    top: 200px;
-    margin-left: 80px;
+    top: 120px;
+    margin-left: 90px;
     box-shadow: 0 2px 15px rgb(58, 54, 54);
 }
 
 .shape {
-    height: 275px;
-    width: 430px;
+    height: 200px;
+    width: 330px;
     background-color: #37414b;
     margin-left: -20px;
     position: relative;
@@ -56,12 +58,17 @@ h3 {
 
 p {
     padding-left: 0px;
+    font-size: 12px;
     padding-right: 0px;
     color: rgb(20, 19, 20);
 }
 
-/* .icons {
+.icons {
     margin-top: 15px;
+    
+}
+.icons a{
+text-decoration: none;
 }
 
 .icons i {
@@ -75,4 +82,4 @@ p {
 .icons i:hover {
     transform: scale(1.1);
     color: rgb(18, 192, 235);
-} */
+}

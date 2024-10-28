@@ -6,8 +6,11 @@
             </div>
         </div>
         <h3>{{ user.username }}</h3>
-        <h3 class="title">{{ user.fullName }}</h3>
+        <h4 class="title">{{ user.fullName }}</h4>
         <p>{{ user.email }}</p>
+        <div class="icons">
+            <a [routerLink]="['/logout']" (click)="logout()"><fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon> Logout</a> 
+           </div>
     </div>
 </body>
 
