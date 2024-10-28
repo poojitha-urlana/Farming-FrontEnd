@@ -1,7 +1,7 @@
-/* Container that holds both the sidebar and the content */
+
 .dashboard-container {
-    display: flex; /* Use flexbox to align sidebar and content horizontally */
-    height: 100vh; /* Full height to match the viewport */
+    
+    height: 100vh; 
   }
   
   /* Sidebar styles */
