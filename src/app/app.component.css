@@ -14,18 +14,17 @@
 
    .dashboard-container {
     display: flex;
-    height: 100vh; /* Full viewport height */
-    flex-direction: row; /* Places sidebars and main content side by side */
+    height: 100vh; 
+    flex-direction: row; 
   }
   
   .dashboard-navbar {
-    width: 250px; /* Adjust width as needed for sidebar */
+    width: 250px; 
   }
   
   .main-content {
-    flex-grow: 1; /* Takes up remaining space */
-    
-    padding: 20px; /* Optional padding for main content */
+    flex-grow: 1; 
+    background-color: #F5F5F5;
     transition: margin-left 0.3s;
   }
   
