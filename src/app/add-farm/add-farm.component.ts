@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./add-farm.component.css']
 })
 export class AddFarmComponent {
-  // Initialize a new Farm object with default values
+  
   farm: Farm = {
     farmId: 0,
     name: '',
@@ -21,17 +21,17 @@ export class AddFarmComponent {
     area: 0,
     soilType: '',
     cropName: '',
-    status: 'Active', // Default to 'Active'
+    status: 'Active', 
     farmSize: '',
-    sensorData: [] // Keep it empty for now if no sensors are added
+    sensorData: [] 
   };
 
   constructor(private farmService: FarmService, private router: Router) {}
 
-  // Method to handle form submission
+
   onSubmit(): void {
     this.farmService.createFarm(this.farm).subscribe(() => {
-      this.router.navigate(['/farmmanagement']); // Navigate back to the farm list after adding
+      this.router.navigate(['/farmmanagement']); 
     });
   }
 }

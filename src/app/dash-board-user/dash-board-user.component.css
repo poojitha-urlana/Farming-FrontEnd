@@ -8,7 +8,7 @@ header {
 	background-attachment: fixed;
 	position: relative;
 	overflow: hidden;
-	border-radius: 0 0 95% 95% / 50%;
+	border-radius: 0 0 96% 95% / 50%;
 }
 header .overlay{
 	width: 100%;

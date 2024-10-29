@@ -26,16 +26,39 @@ background-size: cover;
 
 .hero-section p {
   font-size: 64px;
-  text-align: center;
+  text-align: left;
   max-width: 500px; 
   padding-left: 50%;
+  animation: textEntrance 1.5s ease forwards;
+}
+@keyframes textEntrance {
+  0% {
+      transform: translateY(30px) scale(0.5);
+      opacity: 0;
+  }
+  30% {
+      opacity: 1;
+      transform: translateY(-10px) scale(1.1);
+  }
+  70% {
+      transform: translateY(5px) scale(0.9);
+  }
+  100% {
+      transform: translateY(0) scale(1);
+  }
 }
 
+@keyframes fadeInDescription {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 .hero-section h2 {
   font-size: 20px;
   padding-left: 50%;
   max-width: 500px; 
   margin: 30px;
+  opacity: 0;
+            animation: fadeInDescription 1s 1.5s forwards;
 }
 
 .cta-butn {
