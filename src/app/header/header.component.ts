@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../Services/auth.service'; // Import AuthService
+import { AuthService } from '../Services/auth.service'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminService } from '../Services/admin.service';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
@@ -18,7 +18,7 @@ import { ProfileCardComponent } from '../profile-card/profile-card.component';
 })
 export class HeaderComponent {
   username: string | null = null;
-  showProfile: boolean = false; // Controls visibility of profile component
+  showProfile: boolean = false; 
 profileHideTimeout: any;
 
 isDropdownOpen = false;
@@ -30,14 +30,14 @@ isDropdownOpen = false;
 showProfileCard() {
   this.showProfile = true;
   if (this.profileHideTimeout) {
-    clearTimeout(this.profileHideTimeout); // Clear any existing timeout to avoid flickering
+    clearTimeout(this.profileHideTimeout); 
   }
 }
 
 hideProfileCard() {
   this.profileHideTimeout = setTimeout(() => {
     this.showProfile = false;
-  }, 2000); // 2000ms delay (2 seconds)
+  }, 2000); 
 }
 
 
