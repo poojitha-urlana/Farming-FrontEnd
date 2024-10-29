@@ -46,7 +46,7 @@ background-size: cover;
   width: 33%;
   border-radius: 2px;
   color: #fff;
-  background-color: #96be25; /* Customize as needed */
+  background-color: #96be25; 
   border: none;
   cursor: pointer;
   margin-top: 20px;
@@ -57,7 +57,7 @@ background-size: cover;
   height: auto;
   width: 33%;
   color: #fff;
-  background-color: #96be25; /* Customize as needed */
+  background-color: #96be25; 
   border: none;
   cursor: pointer;
   margin-top: 20px;
@@ -67,7 +67,10 @@ background-size: cover;
   background-color: #ffffff;
   color: black;
 }
-
+.cta-butn:hover {
+  background-color: #ffffff;
+ color: black; 
+}
 
 .features-section {
   background-color: #FFFFFF;
