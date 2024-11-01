@@ -8,6 +8,10 @@
         <h5 class="farm-card-title">{{ farm.name }}</h5>
         <p class="farm-card-text"><strong>ID:</strong> {{ farm.farmId }}</p>
         <p class="farm-card-text"><strong>Location:</strong> {{ farm.location }}</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d30214.71812975072!2d84.1348616!3d18.8052929!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1730266201914!5m2!1sen!2sin"
+         width="260" height="200" frameborder="0" style="border:0;" 
+         allowfullscreen="" loading="lazy" 
+         referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="farm-card-footer">
         <button class="farm-button edit" (click)="editFarm(farm.farmId)">Edit-Farm</button>

@@ -24,6 +24,17 @@ h1 {
 	font-size: 50px;
 	margin-bottom: 30px;
 }
+@media screen and (max-width: 600px) {
+h1{
+	font-size: 29px;
+	margin-bottom: 10px;
+}
+header {
+width: 100%;
+height: auto;
+}header .overlay{
+	width: 300px;
+	height: 5px;
+}
 
-
-
+}

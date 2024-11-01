@@ -3,43 +3,32 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fas, faHome, faUser, faTractor, faSeedling, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../Services/auth.service'; 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminService } from '../Services/admin.service';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { ProfileCardComponent } from '../profile-card/profile-card.component';
+
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule,UserProfileComponent,ProfileCardComponent, FormsModule, FontAwesomeModule, RouterModule],
+  imports: [CommonModule, UserProfileComponent, ProfileCardComponent, FormsModule, FontAwesomeModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  faHome = faHome;
+  faUser = faUser;
+  faTractor = faTractor;
+  faSeedling = faSeedling;
+  faCog = faCog;
+  faSignOutAlt = faSignOutAlt;
+
   username: string | null = null;
   showProfile: boolean = false; 
-profileHideTimeout: any;
-
-isDropdownOpen = false;
-
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
-  }
-
-showProfileCard() {
-  this.showProfile = true;
-  if (this.profileHideTimeout) {
-    clearTimeout(this.profileHideTimeout); 
-  }
-}
-
-hideProfileCard() {
-  this.profileHideTimeout = setTimeout(() => {
-    this.showProfile = false;
-  }, 2000); 
-}
-
+  profileHideTimeout: any;
+  isDropdownOpen = false;
 
   constructor(
     private router: Router,
@@ -61,15 +50,43 @@ hideProfileCard() {
     });
   }
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  showProfileCard() {
+    this.showProfile = true;
+    if (this.profileHideTimeout) {
+      clearTimeout(this.profileHideTimeout); 
+    }
+  }
+
+  hideProfileCard() {
+    this.profileHideTimeout = setTimeout(() => {
+      this.showProfile = false;
+    }, 2000); 
+  }
+
   logout() {
     if (this.authService.isLoggedIn$) {
       this.authService.logout();
     } 
     this.cdr.detectChanges();
   }
-  login(){
+
+  login() {
     if (this.adminService.adminLoggedIn$) {
       this.adminService.adminLogout();
     }
   }
+
+  toggleResponsiveMenu() {
+    const topnav = document.getElementById("myTopnav");
+    if (topnav?.className === "topnav") {
+      topnav.className += " responsive";
+    } else if (topnav) {
+      topnav.className = "topnav";
+    }
+  }
+  
 }

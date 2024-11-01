@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { RouterModule } from '@angular/router';
 import { faHome, faUser, faTractor, faSeedling, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenavbar-user',
   standalone: true,
-  imports: [ FontAwesomeModule , RouterModule],
+  imports: [FontAwesomeModule, RouterModule],
   templateUrl: './sidenavbar-user.component.html',
-  styleUrls: ['./sidenavbar-user.component.css'] // Note: Use 'styleUrls' instead of 'styleUrl'
+  styleUrls: ['./sidenavbar-user.component.css']
 })
 export class SidenavbarUserComponent {
-  // Define the icons to be used in the template
   faHome = faHome;
   faUser = faUser;
   faTractor = faTractor;
   faSeedling = faSeedling;
   faCog = faCog;
   faSignOutAlt = faSignOutAlt;
+  
+  isResponsive: boolean = false;
+
+  toggleResponsive() {
+    this.isResponsive = !this.isResponsive;
+  }
 }
