@@ -95,5 +95,36 @@ h1 {
   letter-spacing:6px;
   text-shadow:10px 10px 10px rgba(0,0,0,.3);
 }
+.menu-button {
+  display: none;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  position: fixed;
+  top: 0px;
+  left: 10px;
+  z-index: 100;
+}
+@media screen and (max-width: 600px) {
+  /* Hide sidebar, show menu button */
+  h1 {
+    font-size: 1rem;
+  }
+  .nav__cont {
+    display: none;
+  }
 
+  .menu-button {
+    display: block;
+  }
 
+  /* Display sidebar in expanded mode when responsive */
+  .nav__cont.responsive {
+    display: block;
+    width: 100%;
+    background: radial-gradient(circle at 94.02% 88.03%, #96be25, transparent 100%);
+  }
+
+}

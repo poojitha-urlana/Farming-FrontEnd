@@ -107,14 +107,21 @@
   }
 
  
+}@media screen and (max-width: 600px) {
+.header{
+  width: 100%;
+  height: 30px;
+}
+.container{
+  display: none;
+}
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
- 
   .header {
-    flex-direction: column;
-    padding: 15px;
+    width: 100%;
+    height: 30px;
   }
 
   .container {
@@ -166,6 +173,11 @@
 
 
 @media (max-width: 480px) {
+  .container{
+    display: none;
+    height: 300px;
+    width: 100%;
+  }
   .dots-menu {
     display: flex;
     align-items: center;
