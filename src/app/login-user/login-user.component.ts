@@ -26,7 +26,7 @@ export class LoginUserComponent {
   onSubmit() {
     this.userService.loginUser(this.credentials).subscribe({
       next: (response) => {
-        this.authService.login(this.credentials.username); // Update login state in AuthService
+        this.authService.login(this.credentials.username); 
         console.log('Login successful for:', this.credentials.username);
         this.router.navigate(['/dash-board-user']); 
       },

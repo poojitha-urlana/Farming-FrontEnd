@@ -15,6 +15,8 @@ import { FarmsComponent } from './farms/farms.component';
 import { CropHealthComponent } from './crop-health/crop-health.component';
 import { EditFarmComponent } from './edit-farm/edit-farm.component';
 import { AddFarmComponent } from './add-farm/add-farm.component';
+import { FarmdetailsComponent } from './farmdetails/farmdetails.component';
+import { CropRecomendationComponent } from './crop-recomendation/crop-recomendation.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserDataChartComponent } from './user-data-chart/user-data-chart.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
@@ -35,10 +37,12 @@ export const routes: Routes = [
     { path: 'farmmanagement', component: FarmmanagementComponent },
     { path: 'user-farm-list', component: UserFarmListComponent },
     { path: 'farms', component: FarmsComponent },
+    { path: 'farmdetails', component: FarmdetailsComponent },
     { path: 'farms/:id', component: FarmsComponent },
     { path: 'crop-health', component: CropHealthComponent },
     {path: 'edit-farm/:id', component: EditFarmComponent}, 
     { path: 'add-farm', component: AddFarmComponent },
+    {path: 'crop-recomendation', component: CropRecomendationComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }, // Catch-all for unknown routes
 ];
 

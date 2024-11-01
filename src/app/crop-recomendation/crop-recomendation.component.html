@@ -1,1 +1,110 @@
-<p>crop-recomendation works!</p>
+<div class="container">
+  <h2>Crop Recommendation</h2>
+  <form (ngSubmit)="onPredictCrop()">
+    <label for="temperature">Temperature:</label>
+    <input
+      type="number"
+      id="temperature"
+      [(ngModel)]="predictionData.temperature"
+      name="temperature"
+      required
+      placeholder="Enter temperature"
+      title="Temperature input field"
+    />
+
+    <label for="humidity">Humidity:</label>
+    <input
+      type="number"
+      id="humidity"
+      [(ngModel)]="predictionData.humidity"
+      name="humidity"
+      required
+      placeholder="Enter humidity"
+      title="Humidity input field"
+    />
+
+    <label for="N">Nitrogen (N):</label>
+    <input
+      type="number"
+      id="N"
+      [(ngModel)]="predictionData.N"
+      name="N"
+      required
+      placeholder="Enter nitrogen level"
+      title="Nitrogen input field"
+    />
+
+    <label for="P">Phosphorus (P):</label>
+    <input
+      type="number"
+      id="P"
+      [(ngModel)]="predictionData.P"
+      name="P"
+      required
+      placeholder="Enter phosphorus level"
+      title="Phosphorus input field"
+    />
+
+    <label for="K">Potassium (K):</label>
+    <input
+      type="number"
+      id="K"
+      [(ngModel)]="predictionData.K"
+      name="K"
+      required
+      placeholder="Enter potassium level"
+      title="Potassium input field"
+    />
+
+    <button type="submit">Predict Crop</button>
+  </form>
+
+  <div *ngIf="recommendedCrop">
+    <h3>Recommended Crop: {{ recommendedCrop }}</h3>
+  </div>
+
+  <h2>Nutrient Requirements</h2>
+  <form (ngSubmit)="onGetNutrientRequirements()">
+    <label for="crop">Crop:</label>
+    <input
+      type="text"
+      id="crop"
+      [(ngModel)]="nutrientData.crop"
+      name="crop"
+      required
+      placeholder="Enter crop name"
+      title="Crop input field"
+    />
+
+    <label for="nutrientTemperature">Temperature:</label>
+    <input
+      type="number"
+      id="nutrientTemperature"
+      [(ngModel)]="nutrientData.temperature"
+      name="nutrientTemperature"
+      required
+      placeholder="Enter temperature"
+      title="Temperature input field for nutrient requirements"
+    />
+
+    <label for="nutrientHumidity">Humidity:</label>
+    <input
+      type="number"
+      id="nutrientHumidity"
+      [(ngModel)]="nutrientData.humidity"
+      name="nutrientHumidity"
+      required
+      placeholder="Enter humidity"
+      title="Humidity input field for nutrient requirements"
+    />
+
+    <button type="submit">Get Nutrient Requirements</button>
+  </form>
+
+  <div *ngIf="recommendedNutrients && recommendedNutrients.N">
+    <h3>Recommended Nutrients</h3>
+    <p>Nitrogen (N): {{ recommendedNutrients.N }}</p>
+    <p>Phosphorus (P): {{ recommendedNutrients.P }}</p>
+    <p>Potassium (K): {{ recommendedNutrients.K }}</p>
+  </div>
+</div>

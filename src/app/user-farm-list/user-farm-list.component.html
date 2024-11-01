@@ -4,16 +4,14 @@
   <div class="card-container">
     <div *ngFor="let farm of farms" class="card">
       <div class="card-content">
-        <p><strong>Farm-Name:</strong> {{ farm.name }}</p>
+        <div class="image">
+          <img src="../../assets/imgfrm.jpg" alt="">
+        </div>
+        <p> {{ farm.name }}</p>
         <p><strong>Location:</strong> {{ farm.location }}</p>
-        <!-- <p><strong>Area:</strong> {{ farm.area }}</p>
-        <p><strong>Soil Type:</strong> {{ farm.soilType }}</p> -->
-        <p><strong>Crop Name:</strong> {{ farm.cropName }}</p>
-        <!-- <p><strong>Status:</strong> {{ farm.status }}</p>
-        <p><strong>Farm Size:</strong> {{ farm.farmSize }}</p> -->
       </div>
       <div class="bottomCard">
-        <h3>Farm ID: {{ farm.farmId }}</h3>
+        <button (click)="navigateFarmdetails()">view Details</button>
       </div>
     </div>
   </div>

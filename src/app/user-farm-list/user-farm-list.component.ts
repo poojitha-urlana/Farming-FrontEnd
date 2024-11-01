@@ -24,12 +24,15 @@ export class UserFarmListComponent implements OnInit {
     this.getFarms();
   }
 
-  // Get all farms
+ 
   getFarms(): void {
     this.farmService.getAllFarms().subscribe((data: Farm[]) => {
       this.farms = data;
     });
   }
   
+  navigateFarmdetails(){
+    this.router.navigate(['/farmdetails']);
+  }
   
 }
