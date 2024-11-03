@@ -1,110 +1,33 @@
-<div class="container">
-  <h2>Crop Recommendation</h2>
-  <form (ngSubmit)="onPredictCrop()">
-    <label for="temperature">Temperature:</label>
-    <input
-      type="number"
-      id="temperature"
-      [(ngModel)]="predictionData.temperature"
-      name="temperature"
-      required
-      placeholder="Enter temperature"
-      title="Temperature input field"
-    />
-
-    <label for="humidity">Humidity:</label>
-    <input
-      type="number"
-      id="humidity"
-      [(ngModel)]="predictionData.humidity"
-      name="humidity"
-      required
-      placeholder="Enter humidity"
-      title="Humidity input field"
-    />
-
-    <label for="N">Nitrogen (N):</label>
-    <input
-      type="number"
-      id="N"
-      [(ngModel)]="predictionData.N"
-      name="N"
-      required
-      placeholder="Enter nitrogen level"
-      title="Nitrogen input field"
-    />
-
-    <label for="P">Phosphorus (P):</label>
-    <input
-      type="number"
-      id="P"
-      [(ngModel)]="predictionData.P"
-      name="P"
-      required
-      placeholder="Enter phosphorus level"
-      title="Phosphorus input field"
-    />
-
-    <label for="K">Potassium (K):</label>
-    <input
-      type="number"
-      id="K"
-      [(ngModel)]="predictionData.K"
-      name="K"
-      required
-      placeholder="Enter potassium level"
-      title="Potassium input field"
-    />
-
-    <button type="submit">Predict Crop</button>
-  </form>
-
-  <div *ngIf="recommendedCrop">
-    <h3>Recommended Crop: {{ recommendedCrop }}</h3>
+<form (ngSubmit)="submitForm()">
+  <div>
+    <label for="temperature"><i class="fas fa-thermometer-half icon"></i>Temperature:</label>
+    <input type="number" [(ngModel)]="temperature" name="temperature" placeholder="Enter temperature (°C)" required>
   </div>
-
-  <h2>Nutrient Requirements</h2>
-  <form (ngSubmit)="onGetNutrientRequirements()">
-    <label for="crop">Crop:</label>
-    <input
-      type="text"
-      id="crop"
-      [(ngModel)]="nutrientData.crop"
-      name="crop"
-      required
-      placeholder="Enter crop name"
-      title="Crop input field"
-    />
-
-    <label for="nutrientTemperature">Temperature:</label>
-    <input
-      type="number"
-      id="nutrientTemperature"
-      [(ngModel)]="nutrientData.temperature"
-      name="nutrientTemperature"
-      required
-      placeholder="Enter temperature"
-      title="Temperature input field for nutrient requirements"
-    />
-
-    <label for="nutrientHumidity">Humidity:</label>
-    <input
-      type="number"
-      id="nutrientHumidity"
-      [(ngModel)]="nutrientData.humidity"
-      name="nutrientHumidity"
-      required
-      placeholder="Enter humidity"
-      title="Humidity input field for nutrient requirements"
-    />
-
-    <button type="submit">Get Nutrient Requirements</button>
-  </form>
-
-  <div *ngIf="recommendedNutrients && recommendedNutrients.N">
-    <h3>Recommended Nutrients</h3>
-    <p>Nitrogen (N): {{ recommendedNutrients.N }}</p>
-    <p>Phosphorus (P): {{ recommendedNutrients.P }}</p>
-    <p>Potassium (K): {{ recommendedNutrients.K }}</p>
+  <div>
+    <label for="humidity"><i class="fas fa-tint icon"></i>Humidity:</label>
+    <input type="number" [(ngModel)]="humidity" name="humidity" placeholder="Enter humidity (%)" required>
   </div>
+  <div>
+    <label for="nitrogen"><i class="fas fa-leaf icon"></i>Nitrogen:</label>
+    <input type="number" [(ngModel)]="nitrogen" name="nitrogen" placeholder="Enter nitrogen (kg/ha)" required>
+  </div>
+  <div>
+    <label for="phosphorus"><i class="fas fa-leaf icon"></i>Phosphorus:</label>
+    <input type="number" [(ngModel)]="phosphorus" name="phosphorus" placeholder="Enter phosphorus (kg/ha)" required>
+  </div>
+  <div>
+    <label for="potassium"><i class="fas fa-leaf icon"></i>Potassium:</label>
+    <input type="number" [(ngModel)]="potassium" name="potassium" placeholder="Enter potassium (kg/ha)" required>
+  </div>
+  <button type="submit">Get Recommendation</button>
+</form>
+
+<!-- Display loading indicator -->
+<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="errorMessage" [ngStyle]="{'color': 'red'}" class="error">
+  <h3>{{ errorMessage }}</h3>
+</div>
+<!-- Display recommended crop -->
+<div *ngIf="recommendedCrop" class="result">
+  <h3>Recommended Crop: {{ recommendedCrop }}</h3>
 </div>
