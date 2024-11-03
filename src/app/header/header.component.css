@@ -99,6 +99,7 @@
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
+    width: 100%;
   }
 
   .nav {
@@ -122,6 +123,7 @@
   .header {
     width: 100%;
     height: 30px;
+    padding: 10px 0;
   }
 
   .container {
@@ -214,6 +216,11 @@
 
 
 @media (max-width: 480px) {
+
+.header{
+  width: 480px;
+  padding: 10px 0;
+}
  
   .logo {
     font-size: 18px;

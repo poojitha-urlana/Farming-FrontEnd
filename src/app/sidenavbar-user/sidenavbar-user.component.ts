@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router'; // Import RouterModule
-import { faHome, faUser, faTractor, faSeedling, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faTractor, faSeedling, faCog, faSignOutAlt,faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenavbar-user',
@@ -17,4 +17,8 @@ export class SidenavbarUserComponent {
   faSeedling = faSeedling;
   faCog = faCog;
   faSignOutAlt = faSignOutAlt;
+  faLeaf=faLeaf;
+  
+  toggleResponsive(){
+  }
 }
