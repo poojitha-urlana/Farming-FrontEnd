@@ -1,33 +1,117 @@
-<form (ngSubmit)="submitForm()">
-  <div>
-    <label for="temperature"><i class="fas fa-thermometer-half icon"></i>Temperature:</label>
-    <input type="number" [(ngModel)]="temperature" name="temperature" placeholder="Enter temperature (°C)" required>
+<div class="main-block">
+  <div class="banner">
+    <h1 class="banner-title">PREDICTION</h1>
+    <p class="banner-subtitle">Soil Analysis and Crop Recommendation</p>
   </div>
-  <div>
-    <label for="humidity"><i class="fas fa-tint icon"></i>Humidity:</label>
-    <input type="number" [(ngModel)]="humidity" name="humidity" placeholder="Enter humidity (%)" required>
+  <div class="farm-view">
+<form (ngSubmit)="submitForm()" class="crop-recommendation-form">
+  <!-- Temperature Input -->
+  <div class="form-group">
+    <label for="temperature">Temperature:</label>
+    <div class="input-wrapper">
+      <span class="icon"><i class="fas fa-thermometer-half"></i></span>
+      <input
+        type="number"
+        [(ngModel)]="temperature"
+        name="temperature"
+        id="temperature"
+        placeholder="Enter temperature (°C)"
+        required
+      />
+    </div>
+    <div *ngIf="temperatureRequiredError" class="error">{{ temperatureRequiredError }}</div>
+    <div *ngIf="temperatureError" class="error">{{ temperatureError }}</div>
   </div>
-  <div>
-    <label for="nitrogen"><i class="fas fa-leaf icon"></i>Nitrogen:</label>
-    <input type="number" [(ngModel)]="nitrogen" name="nitrogen" placeholder="Enter nitrogen (kg/ha)" required>
-  </div>
-  <div>
-    <label for="phosphorus"><i class="fas fa-leaf icon"></i>Phosphorus:</label>
-    <input type="number" [(ngModel)]="phosphorus" name="phosphorus" placeholder="Enter phosphorus (kg/ha)" required>
-  </div>
-  <div>
-    <label for="potassium"><i class="fas fa-leaf icon"></i>Potassium:</label>
-    <input type="number" [(ngModel)]="potassium" name="potassium" placeholder="Enter potassium (kg/ha)" required>
-  </div>
-  <button type="submit">Get Recommendation</button>
-</form>
 
-<!-- Display loading indicator -->
-<div *ngIf="loading" class="loading">Loading...</div>
-<div *ngIf="errorMessage" [ngStyle]="{'color': 'red'}" class="error">
-  <h3>{{ errorMessage }}</h3>
+  <!-- Humidity Input -->
+  <div class="form-group">
+    <label for="humidity">Humidity:</label>
+    <div class="input-wrapper">
+      <span class="icon"><i class="fas fa-tint"></i></span>
+      <input
+        type="number"
+        [(ngModel)]="humidity"
+        name="humidity"
+        id="humidity"
+        placeholder="Enter humidity (%)"
+        required
+      />
+    </div>
+    <div *ngIf="humidityRequiredError" class="error">{{ humidityRequiredError }}</div>
+    <div *ngIf="humidityError" class="error">{{ humidityError }}</div>
+  </div>
+
+  <!-- Nitrogen Input -->
+  <div class="form-group">
+    <label for="nitrogen">Nitrogen:</label>
+    <div class="input-wrapper">
+      <span class="icon"><i class="fas fa-leaf"></i></span>
+      <input
+        type="number"
+        [(ngModel)]="nitrogen"
+        name="nitrogen"
+        id="nitrogen"
+        placeholder="Enter nitrogen level (mg/kg)"
+        required
+      />
+    </div>
+    <div *ngIf="nitrogenRequiredError" class="error">{{ nitrogenRequiredError }}</div>
+    <div *ngIf="nitrogenError" class="error">{{ nitrogenError }}</div>
+  </div>
+
+  <!-- Phosphorus Input -->
+  <div class="form-group">
+    <label for="phosphorus">Phosphorus:</label>
+    <div class="input-wrapper">
+      <span class="icon"><i class="fas fa-seedling"></i></span>
+      <input
+        type="number"
+        [(ngModel)]="phosphorus"
+        name="phosphorus"
+        id="phosphorus"
+        placeholder="Enter phosphorus level (mg/kg)"
+        required
+      />
+    </div>
+    <div *ngIf="phosphorusRequiredError" class="error">{{ phosphorusRequiredError }}</div>
+    <div *ngIf="phosphorusError" class="error">{{ phosphorusError }}</div>
+  </div>
+
+  <!-- Potassium Input -->
+  <div class="form-group">
+    <label for="potassium">Potassium:</label>
+    <div class="input-wrapper">
+      <span class="icon"><i class="fas fa-flask"></i></span>
+      <input
+        type="number"
+        [(ngModel)]="potassium"
+        name="potassium"
+        id="potassium"
+        placeholder="Enter potassium level (mg/kg)"
+        required
+      />
+    </div>
+    <div *ngIf="potassiumRequiredError" class="error">{{ potassiumRequiredError }}</div>
+    <div *ngIf="potassiumError" class="error">{{ potassiumError }}</div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="submit-button">
+    <i class="fas fa-seedling" style="margin-right: 8px;"></i> Get Recommendation
+  </button>
+  
+
+  <!-- Loading Indicator -->
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <!-- Display Errors -->
+  <div *ngIf="errorMessage" class="error">
+    <h3>{{ errorMessage }}</h3>
+  </div>
+</form>
 </div>
-<!-- Display recommended crop -->
-<div *ngIf="recommendedCrop" class="result">
+ <!-- Display Recommended Crop -->
+ <div *ngIf="recommendedCrop" class="result">
   <h3>Recommended Crop: {{ recommendedCrop }}</h3>
+</div>
 </div>

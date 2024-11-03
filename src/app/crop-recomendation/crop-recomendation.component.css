@@ -1,57 +1,177 @@
-.recommendation-form-container {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Banner Styling */
+.banner {
+  width: 100%;
+  padding: 40px 0;
+  background-image: url('../../assets/imagefarm.jpg'); /* Use a background image similar to the one in the screenshot */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.banner-subtitle {
+  font-size: 18px;
+  margin: 5px 0 0;
+}
+.farm-view{
+  margin: 20px 0;
+}
+/* General Form Styling */
+.crop-recommendation-form {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #37414b;
+  margin-bottom: 5px;
+}
+
+/* Input Wrapper for Icons */
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  position: absolute;
+  left: 10px;
+  color: #96be25;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 10px 10px 10px 35px;
+  border: 1px solid #d3d3d3;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #37414b;
+  font-size: 14px;
+}
+
+input[type="number"]:focus {
+  border-color: #96be25;
+  outline: none;
+  box-shadow: 0 0 4px rgba(150, 190, 37, 0.3);
+}
+
+/* Error Messages */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #96be25;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #7ca71b;
+}
+
+.submit-button i {
+  margin-right: 5px;
+}
+/* Result Display */
+.result h3 {
+  font-size: 16px;
+  color: #37414b;
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 20px;
+  font-size: 1.1em;
+  animation: loadingFade 1.5s infinite;
+}
+
+/* Result display styling */
+.result {
+  text-align: center;
+  font-size: 1.2em;
+  color: #4CAF50;
+  font-weight: bold;
+  margin-top: 24px;
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Optional styling for headings */
+h3 {
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+/* Keyframes for animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-  
-  h2 {
-    text-align: center;
-    color: #37414b;
+  50% {
+    transform: scale(1.05);
   }
-  
-  .form-group {
-    margin-bottom: 1rem;
+  100% {
+    transform: scale(1);
   }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    color: #37414b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  input[type="number"] {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #d3d3d3;
-    border-radius: 4px;
-    font-size: 1rem;
-    background-color: #ffffff;
+  to {
+    opacity: 1;
   }
-  
-  input[type="number"]:focus {
-    outline: none;
-    border-color: #96be25;
-    box-shadow: 0 0 4px rgba(150, 190, 37, 0.5);
+}
+
+@keyframes loadingFade {
+  0%, 100% {
+    opacity: 0.5;
   }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #96be25;
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  50% {
+    opacity: 1;
   }
-  
-  .submit-btn:hover {
-    background-color: #7fa01c;
-  }
-  
+}
