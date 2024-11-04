@@ -2,12 +2,29 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CropRecommendationService } from '../Services/crop-recommendation.service';
+
+import { 
+  faUser, 
+  faHome, 
+  faCog, 
+  faTint, 
+  faThermometerHalf, 
+  faWater, 
+  faCamera,
+  faFlask,
+  faLeaf, 
+  faSeedling, 
+  faChartLine 
+} from '@fortawesome/free-solid-svg-icons';
+import { FaIconComponent, } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-crop-recomendation',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,FontAwesomeModule],
   templateUrl: './crop-recomendation.component.html',
   styleUrl: './crop-recomendation.component.css'
 })
@@ -34,7 +51,9 @@ export class CropRecomendationComponent {
   phosphorusRequiredError: string | null = null;
   potassiumRequiredError: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient , private  library: FaIconLibrary) {
+    library.addIcons(faUser, faHome, faCog, faTint, faThermometerHalf, faFlask,faWater,faLeaf, faCamera, faSeedling, faChartLine);
+  }
 
   submitForm() {
     // Check for empty fields
@@ -50,7 +69,7 @@ export class CropRecomendationComponent {
       return;
     }
 
-    const apiUrl = 'http://127.0.0.1:5000/predict';  // Flask API URL
+    const apiUrl = 'http://127.0.0.1:5000/predict';  
     const payload = {
       temperature: this.temperature,
       humidity: this.humidity,

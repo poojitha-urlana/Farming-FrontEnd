@@ -43,7 +43,8 @@ export class AppComponent {
             '/dash-board-user', '/user-farm-list',
              '/crop-health', '/farms', '/farms/:id',
              '/dash-board-admin','/farmmanagement', 
-             '/user-management', '/edit-farm','/add-farm'
+             '/user-management', '/edit-farm','/add-farm',
+             '/crop-recomendation',
             ].some(path => currentUrl.startsWith(path)) ;
       }
     });

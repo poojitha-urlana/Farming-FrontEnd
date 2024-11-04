@@ -1,17 +1,16 @@
 <app-header></app-header>
 <div class="dashboard-container">
-  <!-- Conditionally display sidebar -->
-  <aside class="dashboard-navbar" *ngIf="showUserSidebar">
-    <app-sidenavbar-user></app-sidenavbar-user>
-  </aside>
+  
   <aside class="dashboard-navbar" *ngIf="showAdminSidebar">
     <app-sidenavbar-admin></app-sidenavbar-admin>
   </aside>
+  <aside class="dashboard-navbar" *ngIf="showUserSidebar">
+    <app-sidenavbar-user></app-sidenavbar-user>
+  </aside>
 
-  <!-- Main content of the dashboard -->
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
 </div>
-<!-- Conditionally display footer -->
+
 <app-footer *ngIf="showFooter"></app-footer>

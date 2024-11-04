@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './farms.component.css'
 })
 export class FarmsComponent implements OnInit {
-  farm!: Farm; // Using '!' to assert that farm will be defined
+  farm!: Farm; 
 
   constructor(
     private route: ActivatedRoute,
@@ -39,13 +39,13 @@ export class FarmsComponent implements OnInit {
   getSensorIcon(sensorType: string): string {
     switch (sensorType) {
       case 'temperature':
-        return 'thermostat'; // Material icon for temperature
+        return 'thermostat'; 
       case 'humidity':
-        return 'water_drop'; // Material icon for humidity
+        return 'water_drop'; 
       case 'moisture':
-        return 'spa'; // Material icon for moisture
+        return 'spa'; 
       default:
-        return 'help'; // Default icon if sensor type is unknown
+        return 'help'; 
     }
   }
   

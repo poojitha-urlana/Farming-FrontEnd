@@ -1,12 +1,28 @@
 /* Banner Styling */
-.banner {
-  width: 100%;
-  padding: 40px 0;
-  background-image: url('../../assets/imagefarm.jpg'); /* Use a background image similar to the one in the screenshot */
+header {
+  background-image: url('../../assets/crop-re.jpg'); /* Use a background image similar to the one in the screenshot */
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   text-align: center;
+  position: relative;
+  height: auto;
+	overflow: hidden;
   color: #ffffff;
+  border-radius: 0 0 96% 95% / 50%;
+}
+header .overlay{
+	width: 100%;
+	height: 30px;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( 135deg, #c6cacc69 10%, #c2c6c92c 100%);
+	
+}
+
+h1 {
+	font-size: 50px;
+	margin-bottom: 30px;
 }
 
 .banner-title {
@@ -21,6 +37,7 @@
 }
 .farm-view{
   margin: 20px 0;
+  
 }
 /* General Form Styling */
 .crop-recommendation-form {
@@ -28,7 +45,7 @@
   max-width: 500px;
   margin: auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
@@ -40,13 +57,16 @@
 }
 
 .form-group label {
-  display: block;
+  display: flex;
   font-weight: bold;
   color: #37414b;
   margin-bottom: 5px;
 }
+.form-group{
+  display: grid;
+  grid-template-columns: 1fr 3fr ;
+}
 
-/* Input Wrapper for Icons */
 .input-wrapper {
   position: relative;
   display: flex;
@@ -65,9 +85,15 @@ input[type="number"] {
   padding: 10px 10px 10px 35px;
   border: 1px solid #d3d3d3;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #f5f5f5;
   color: #37414b;
   font-size: 14px;
+}
+.fa-icon{
+  color: #96be25;
+  font-size: 24px;
+  /* margin-left: 10px;
+  margin-right: 5px; */
 }
 
 input[type="number"]:focus {
