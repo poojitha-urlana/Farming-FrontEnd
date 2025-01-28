@@ -14,7 +14,7 @@ import { UserManagementService } from '../Services/user-management.service';
 })
 export class UserManagementComponent implements OnInit {
   users: User[] = [];
-  newUser: User = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '' };
+  newUser: User = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '' ,active : true};
 
   constructor(private userManagementService: UserManagementService) {}
 
@@ -25,15 +25,17 @@ export class UserManagementComponent implements OnInit {
   getAllUsers(): void {
     this.userManagementService.getAllUsers().subscribe(
       (data) => {
-        this.users = data;
+        this.users = data.map(user => ({ ...user, active: user.active ?? false })); // Default to false if active is undefined
       },
       (error) => {
         console.error('Error fetching users:', error);
       }
     );
   }
+  
 
   createUser(): void {
+    this.newUser.active = true; 
     this.userManagementService.createUser(this.newUser).subscribe(
       (newUser) => {
         this.users.push(newUser);
@@ -75,6 +77,6 @@ export class UserManagementComponent implements OnInit {
 
   // Helper method to reset the new user form
   private resetNewUser(): void {
-    this.newUser = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '' };
+    this.newUser = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '' ,active : true};
   }
 }

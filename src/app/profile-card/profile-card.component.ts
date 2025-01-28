@@ -14,7 +14,7 @@ import { AuthService } from '../Services/auth.service';
   styleUrls: ['./profile-card.component.css'] // Corrected to 'styleUrls'
 })
 export class ProfileCardComponent {
-  user: User = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '' };
+  user: User = { id: 0, username: '', password: '', email: '', fullName: '', confirmPassword: '',active: true };
 
   constructor(private userManagementService: UserManagementService, private authService :AuthService) {}
 
@@ -27,7 +27,7 @@ export class ProfileCardComponent {
     const userId = 1; // Adjust the ID as needed
     this.userManagementService.getUserById(userId).subscribe(
       (data) => {
-        this.user = data;
+        this.user = { ...data, active: data.active ?? true }; // Default to true if active is undefined
       },
       (error) => {
         console.error('Error fetching user details:', error);
