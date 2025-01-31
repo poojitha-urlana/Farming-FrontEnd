@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-
+import { SensorVisualComponent } from '../sensor-visual/sensor-visual.component';
 @Component({
   selector: 'app-farmdetails',
   standalone: true,
-  imports: [],
+  imports: [SensorVisualComponent],
   templateUrl: './farmdetails.component.html',
   styleUrl: './farmdetails.component.css'
 })

@@ -1,29 +1,52 @@
-import { Component  , OnInit} from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { UserService } from '../Services/user.service';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-//import { UserDataChartComponent } from '../user-data-chart/user-data-chart.component';
-import { User } from '../Models/user';
+import { Component, OnInit } from '@angular/core';
+import { FarmService } from '../Services/farm.service';
+import { Farm } from '../Models/farm';
+import * as Highcharts from 'highcharts';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @Component({
   selector: 'app-dash-board-user',
   standalone: true,
-  imports: [RouterModule ,FormsModule , CommonModule],
+  imports: [HighchartsChartModule],
   templateUrl: './dash-board-user.component.html',
-  styleUrl: './dash-board-user.component.css'
+  styleUrls: ['./dash-board-user.component.css']
 })
-export class DashBoardUserComponent {
-  username: string = '';
+export class DashBoardUserComponent implements OnInit {
+  farms: any[] = [];
+  smallFarms: number = 0;
+  mediumFarms: number = 0;
+  largeFarms: number = 0;
 
-  constructor(private userService: UserService) {}
+  constructor(private farmService: FarmService) {}
 
-  // ngOnInit() {
-  //   // Subscribe to the user data to get the logged-in user information
-  //   this.userService.user$.subscribe(user => {
-  //     if (user) {
-  //       this.username = user.username; // Assuming the 'username' field is available in the user data
-  //     }
-  //   });
-  // }
+  ngOnInit(): void {
+    this.fetchFarms();
+  }
+
+  fetchFarms(): void {
+    this.farmService.getAllFarms().subscribe((data: any[]) => {
+      this.farms = data;
+      console.log('Fetched Farms:', this.farms);
+
+      this.calculateFarmSizes();
+    });
+  }
+
+  calculateFarmSizes(): void {
+    this.smallFarms = 0;
+    this.mediumFarms = 0;
+    this.largeFarms = 0;
+
+    this.farms.forEach(farm => {
+      if (farm.area < 5) {
+        this.smallFarms++;
+      } else if (farm.area >= 5 && farm.area < 15) {
+        this.mediumFarms++;
+      } else {
+        this.largeFarms++;
+      }
+    });
+
+    console.log(`Farm Sizes - Small: ${this.smallFarms}, Medium: ${this.mediumFarms}, Large: ${this.largeFarms}`);
+  }
 }
