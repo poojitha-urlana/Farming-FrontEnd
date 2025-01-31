@@ -2,6 +2,7 @@
 header {
   background-image: url('../../assets/crop-re.jpg'); /* Use a background image similar to the one in the screenshot */
   background-size: cover;
+  margin-top: 8.5%;
   /* background-position: center; */
   text-align: center;
   position: relative;

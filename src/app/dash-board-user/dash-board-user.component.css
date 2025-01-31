@@ -2,6 +2,7 @@
 header {
 	background: url('/assets/farm.jpg') no-repeat center center;
 	text-align: center;
+	margin-top: 8%;
 	width: 100%;
 	height: auto;
 	background-size: cover;
@@ -37,4 +38,7 @@ height: auto;
 	height: 5px;
 }
 
+}
+.dashboard{
+	margin-left: 20%;
 }
