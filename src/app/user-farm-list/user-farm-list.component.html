@@ -5,13 +5,20 @@
     <div *ngFor="let farm of farms" class="card">
       <div class="card-content">
         <div class="image">
-          <img src="../../assets/imgfrm.jpg" alt="">
+          <img src="../../assets/imgfrm.jpg" alt="Farm Image">
         </div>
-        <p> {{ farm.name }}</p>
-        <p><strong>Location:</strong> {{ farm.location }}</p>
+        <p><strong>Name:</strong> {{ farm.name }}</p>
+        <p><strong>Area:</strong> {{ farm.area }} hectares</p>
+        <p><strong>Soil Type:</strong> {{ farm.soilType }}</p>
+        <p><strong>Crop Name:</strong> {{ farm.cropName }}</p>
+        <p><strong>Status:</strong> {{ farm.status }}</p>
+        <p><strong>Farm Size:</strong> {{ farm.farmSize }}</p>
+        <!-- <p><strong>Description:</strong> {{ farm.description }}</p>
+        <p><strong>Address:</strong> {{ farm.address }}</p>
+        <p><strong>Location:</strong> {{ farm.latitude }}, {{ farm.longitude }}</p> -->
       </div>
       <div class="bottomCard">
-        <button (click)="navigateFarmdetails()" class="btn">view Details</button>
+        <button (click)="navigateFarmdetails(farm.farmId)" class="btn">View Details</button>
       </div>
     </div>
   </div>

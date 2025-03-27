@@ -19,20 +19,17 @@ export class UserFarmListComponent implements OnInit {
 
   constructor(private farmService: FarmService, private router: Router) {}
 
-  
   ngOnInit(): void {
     this.getFarms();
   }
 
- 
   getFarms(): void {
     this.farmService.getAllFarms().subscribe((data: Farm[]) => {
       this.farms = data;
     });
   }
-  
-  navigateFarmdetails(){
-    this.router.navigate(['/farmdetails']);
+
+  navigateFarmdetails(farmId: number): void {
+    this.router.navigate([`/farmdetails`]);
   }
-  
 }

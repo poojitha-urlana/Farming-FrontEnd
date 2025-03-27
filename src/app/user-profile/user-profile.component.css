@@ -1,26 +1,105 @@
 .container {
-    max-width: 800px;
-    margin: auto;
-    margin-top: 10%;
-    padding: 20px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+p {
+  color: #34495e;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: #2c3e50;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 80px;
+}
+
+/* Loading state */
+div[ngIf="!user"] {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
   }
   
   .card {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-top: 20px;
+    padding: 1.5rem;
   }
   
-  .card h3 {
-    margin-top: 0;
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.3rem;
   }
   
-  .card p {
-    margin: 10px 0;
+  h3 {
+    font-size: 1.2rem;
   }
-.icon{
-  height: auto;
-  width: 5px;
-}  
+  
+  strong {
+    min-width: 70px;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
