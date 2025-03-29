@@ -1,0 +1,181 @@
+/* Main container */
+.treatment-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Loading indicator for PDF generation */
+  .treatment-container.generating-pdf::before {
+    content: 'Generating PDF report...';
+    display: block;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #2c7a3e;
+  }
+  
+  /* Header section */
+  .header-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .header-section h1 {
+    color: #2c7a3e;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .header-section p {
+    color: #666;
+    font-size: 1.1rem;
+  }
+  
+  /* Image preview */
+  .image-preview-section {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .uploaded-image {
+    max-width: 100%;
+    max-height: 350px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+  }
+  
+  /* Result summary */
+  .result-summary {
+    margin-bottom: 2.5rem;
+  }
+  
+  .result-card {
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .result-card p {
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
+  }
+  
+  /* Treatment details */
+  .treatment-details {
+    margin-bottom: 2rem;
+  }
+  
+  .detail-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detail-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  
+  .detail-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .detail-card h3 {
+    color: #2c7a3e;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* No treatment message */
+  .no-treatment {
+    margin: 2rem 0;
+  }
+  
+  .message-card {
+    background-color: #fff3cd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  /* Action buttons */
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+  }
+  
+  .back-btn, .download-btn {
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .back-btn {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .download-btn {
+    background-color: #2c7a3e;
+    color: white;
+  }
+  
+  .back-btn:hover, .download-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .treatment-container {
+      padding: 1.5rem;
+    }
+    
+    .detail-section {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .back-btn, .download-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }

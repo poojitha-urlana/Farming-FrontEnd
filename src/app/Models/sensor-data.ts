@@ -1,6 +1,8 @@
 export interface SensorData {
-  id: number;
+  id?: number;
   temperature: number;
   humidity: number;
-  waterContent: number;
+  soilMoisture: number;
+  relayState: boolean;
+  timestamp?: string;
 }

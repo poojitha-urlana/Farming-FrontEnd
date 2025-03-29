@@ -20,6 +20,8 @@ import { CropRecomendationComponent } from './crop-recomendation/crop-recomendat
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserDataChartComponent } from './user-data-chart/user-data-chart.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
+import { TreatmentComponent } from './treatment/treatment.component';
+import { SensorVisualComponent } from './sensor-visual/sensor-visual.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -32,22 +34,23 @@ export const routes: Routes = [
     { path: 'dash-board-user', component: DashBoardUserComponent },
     { path: 'dash-board-admin', component: DashBoardAdminComponent },
     { path: 'sidenavbar-admin', component: SidenavbarAdminComponent },
-    { path: 'sidenavbar-user', component: SidenavbarUserComponent},
+    { path: 'sidenavbar-user', component: SidenavbarUserComponent },
     { path: 'user-management', component: UserManagementComponent },
     { path: 'farmmanagement', component: FarmmanagementComponent },
     { path: 'user-farm-list', component: UserFarmListComponent },
     { path: 'farms', component: FarmsComponent },
-    { path: 'farmdetails', component: FarmdetailsComponent },
-    { path: 'farms/:id', component: FarmsComponent },
+    { path: 'farmdetails/:id', component: FarmdetailsComponent },  // ✅ Corrected farm details route
     { path: 'crop-health', component: CropHealthComponent },
-    {path: 'edit-farm/:id', component: EditFarmComponent}, 
+    { path: 'edit-farm/:id', component: EditFarmComponent }, 
     { path: 'add-farm', component: AddFarmComponent },
-    {path: 'crop-recomendation', component: CropRecomendationComponent },
+    { path: 'treatment', component: TreatmentComponent },
+    { path: 'crop-recomendation', component: CropRecomendationComponent },
+    { path: 'sensor-data', component: SensorVisualComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }, // Catch-all for unknown routes
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+})
+export class AppRoutingModule { }

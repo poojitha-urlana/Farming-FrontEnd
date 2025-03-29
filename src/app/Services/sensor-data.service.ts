@@ -14,14 +14,17 @@ export interface SensorData {
 @Injectable({
   providedIn: 'root'
 })
-export class SensorService {private apiUrl = 'http://localhost:8899/api/sensor-data'; // Adjust if needed
+export class SensorDataService {
+  private apiUrl = 'http://localhost:8899/api/sensor-data'; // Backend URL
 
   constructor(private http: HttpClient) {}
 
-  getAllSensorData(): Observable<SensorData[]> {
+  // Fetch all sensor data
+  getSensorData(): Observable<SensorData[]> {
     return this.http.get<SensorData[]>(this.apiUrl);
   }
 
+  // Save new sensor data
   saveSensorData(sensorData: SensorData): Observable<SensorData> {
     return this.http.post<SensorData>(this.apiUrl, sensorData);
   }

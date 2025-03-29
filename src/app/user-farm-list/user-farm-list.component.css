@@ -1,67 +1,134 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-
+/* Modern CSS Styling for Farm List */
+.user-farm-list{
+  margin-left: 20%;
+  margin-top: 7%;
+}
 .container {
   max-width: 1200px;
-  margin: auto;
-  padding: 20px;
-  margin-top: 8.5%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+  color: #2c3e50;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
   text-align: center;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #96be25, #61b810);
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
 }
 
 .card-container {
-  text-align: center;
-  margin-left: 20%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card-content {
-  
-  text-align: left;
+  padding: 1.5rem;
+  flex-grow: 1;
 }
 
-.image img{
-  width: 300px;
+.image {
+  width: 100%;
+  height: 160px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
 }
-.card h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #333;
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .image img {
+  transform: scale(1.05);
 }
 
 .card p {
-  margin: 5px 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  color: #34495e;
+  margin-bottom: 0.7rem;
+  line-height: 1.5;
 }
-.bottomCard button{
-  background-color: #96be25;
-  margin-bottom: 0px;
-  text-transform: capitalize;
-  text-align: center;
-  width: 100%;
-  transition: 0.3s;
-  color: white;
-  padding-bottom: 0%;
-  border-radius: 5px;
-  text-decoration: none;
-  height: 30px;
-  border: #96be25;
-}
-.bottomCard button:hover{
-  background-color: #fff;
-  color: #96be25;
+
+.card p strong {
+  color: #2c3e50;
   font-weight: 600;
-  border: 1px solid #96be25;
 }
-.bottomCard h3{
+
+.bottomCard {
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #96be25;
   color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #219653;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .card-container {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,8 +1,51 @@
-<div class="chart-container">
-    <highcharts-chart 
-      [Highcharts]="Highcharts"
-      [options]="chartOptions"
-      style="width: 60%; height: 400px; display: block;">
-    </highcharts-chart>
-  </div>
+<section class="sensor-visual" > 
+<div class="sensor-container">
+  <h2>Sensor Data</h2>
   
+  <!-- Charts Section -->
+  <!-- <div class="charts-container">
+    <div class="chart-card">
+      <h3>Temperature Trend</h3>
+      <canvas id="temperatureChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Humidity Trend</h3>
+      <canvas id="humidityChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Soil Moisture</h3>
+      <canvas id="moistureChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Relay State</h3>
+      <canvas id="relayChart"></canvas>
+    </div>
+  </div> -->
+
+  <!-- Data Table -->
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Temperature (°C)</th>
+          <th>Humidity (%)</th>
+          <th>Soil Moisture</th>
+          <th>Relay State</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of sensorData">
+          <td [class.highlight]="data.temperature > 30">{{ data.temperature }}</td>
+          <td>{{ data.humidity }}</td>
+          <td [class.highlight]="data.soilMoisture < 30">{{ data.soilMoisture }}</td>
+          <td [class.on]="data.relayState" [class.off]="!data.relayState">
+            {{ data.relayState ? 'ON' : 'OFF' }}
+          </td>
+          <td>{{ data.timestamp | date:'medium' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>

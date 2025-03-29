@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user-farm-list',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule ,RouterModule],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule],
   templateUrl: './user-farm-list.component.html',
   styleUrls: ['./user-farm-list.component.css'],
 })
@@ -30,6 +30,6 @@ export class UserFarmListComponent implements OnInit {
   }
 
   navigateFarmdetails(farmId: number): void {
-    this.router.navigate([`/farmdetails`]);
+    this.router.navigate([`/farmdetails/${farmId}`]); // ✅ Correctly passing the farmId
   }
 }

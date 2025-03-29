@@ -6,8 +6,9 @@ header{
 }
 .header {
   background-color: #37414b; 
-  padding: 20px 0;
+  padding: 10px 0;
   color: white;
+  background: #37414b 2px transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;

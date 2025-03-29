@@ -1,3 +1,4 @@
+<section class="user-farm-list">
 <div class="container">
   <h2>Farm List</h2>
 
@@ -9,13 +10,6 @@
         </div>
         <p><strong>Name:</strong> {{ farm.name }}</p>
         <p><strong>Area:</strong> {{ farm.area }} hectares</p>
-        <p><strong>Soil Type:</strong> {{ farm.soilType }}</p>
-        <p><strong>Crop Name:</strong> {{ farm.cropName }}</p>
-        <p><strong>Status:</strong> {{ farm.status }}</p>
-        <p><strong>Farm Size:</strong> {{ farm.farmSize }}</p>
-        <!-- <p><strong>Description:</strong> {{ farm.description }}</p>
-        <p><strong>Address:</strong> {{ farm.address }}</p>
-        <p><strong>Location:</strong> {{ farm.latitude }}, {{ farm.longitude }}</p> -->
       </div>
       <div class="bottomCard">
         <button (click)="navigateFarmdetails(farm.farmId)" class="btn">View Details</button>
@@ -23,3 +17,4 @@
     </div>
   </div>
 </div>
+</section>
