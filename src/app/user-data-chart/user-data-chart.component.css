@@ -5,6 +5,7 @@
   }
   .charts-container {
     display: flex; 
+    margin-top: 2%;
     justify-content: space-between; 
     align-items: center; 
     padding: 20px; 

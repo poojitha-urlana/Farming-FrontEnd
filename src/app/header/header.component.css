@@ -1,25 +1,22 @@
-
-header{
+/* Header Styles */
+header {
   width: 100%;
   position: fixed;
-  z-index: 1000;   
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #37414b 0%, #2a333a 100%);
+  transition: all 0.3s ease;
 }
+
 .header {
-  background-color: #37414b; 
-  padding: 10px 0;
+  padding: 15px 0;
   color: white;
-  background: #37414b 2px transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  
 }
-.img{
-  width: 50px;
-  height: auto;
-}
-
 
 .container {
   width: 100%;
@@ -28,220 +25,201 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 }
-#image{
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #96be25;
+  transform: translateX(5px);
+}
+
+.logofarm {
   width: 50px;
   height: 50px;
-
-}
-.user{
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  font-size: 18px;
-  margin-right: 0px;
-}.logofarm{
-  width: 70px;
-  height: auto;      
   border-radius: 50%;
-  margin-right: 10px;   
-}
-.user-image{
-  width:  50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  background-color: rgb(11, 107, 185);
-  margin-left: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  margin-right: 15px;
+  border: 2px solid #96be25;
+  transition: all 0.3s ease;
 }
 
-.logo {
-  display: flex;           
-  align-items: center;      
-  font-size: 24px;          
-  text-decoration: none;    
-  color: white;        
+.logo:hover .logofarm {
+  transform: rotate(10deg);
+  box-shadow: 0 0 15px rgba(150, 190, 37, 0.5);
 }
 
-
+/* Navigation Styles */
 .nav {
   display: flex;
-  gap: 20px;
-}
-.user-name {
-  display: flex;
+  gap: 25px;
   align-items: center;
-  gap: 8px; 
-  font-weight: bold;
-  font-size: 18px;
 }
-
-.user-name .img {
-  width: 30px; 
-  height: 30px;
-  border-radius: 50%; 
-}
-
 
 .nav-link {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-
 
 .nav-link:hover {
   color: #96be25;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
-.user-image{
+
+.nav-link fa-icon {
+  font-size: 1.1rem;
+}
+
+/* User/Admin Styles */
+.user, .admin {
+  position: relative;
+}
+
+.user-name {
   display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
- 
-}@media screen and (max-width: 600px) {
-.header{
-  width: 100%;
-  height: 30px;
+.user-name:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #96be25;
 }
-.container{
+
+.user-name .img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #96be25;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.user-name:hover .img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(150, 190, 37, 0.5);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
   display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
 }
+
+.mobile-menu-btn:hover {
+  color: #96be25;
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .header {
-    width: 100%;
-    height: 30px;
-    padding: 10px 0;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-  }
-
+@media (max-width: 992px) {
   .logo {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
   }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
 
- 
-  .logo, .nav {
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #37414b 0%, #2a333a 100%);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+  
+  .nav.active {
+    transform: translateY(0);
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 0;
     justify-content: center;
   }
-
-  .nav {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  
+  .user, .admin {
+    width: 100%;
+    text-align: center;
   }
-
-  .nav-link {
-    font-size: 16px;
-    padding: 10px 0;
+  
+  .user-name {
+    justify-content: center;
+    padding: 15px 20px;
   }
+}
 
- 
-  .user {
-    font-size: 16px;
-    margin-top: 10px;
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
   }
-
-  .user-image {
+  
+  .logofarm {
     width: 40px;
     height: 40px;
+    margin-right: 10px;
+  }
+  
+  .header {
+    padding: 10px 0;
   }
 }
 
-
-.dots-menu {
-  display: none; 
-  cursor: pointer;
-  font-size: 24px;
-  color: white;
+/* Animation for profile card */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-
-@media (max-width: 480px) {
-  .container{
-    display: none;
-    height: 300px;
-    width: 100%;
-  }
-  .dots-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 400px;
-
-  }
-
-  .nav {
-    display: none; 
-  }
-
-  .dots-dropdown {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 60px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .dots-dropdown a {
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    display: block;
-    font-size: 16px;
-  }
-
-  .dots-dropdown a:hover {
-    background-color: #96be25;
-  }
-}
-
-
-@media (max-width: 480px) {
-
-.header{
-  width: 480px;
-  padding: 10px 0;
-}
- 
-  .logo {
-    font-size: 18px;
-  }
-
-  .nav-link {
-    font-size: 14px;
-  }
-
-  .user {
-    font-size: 14px;
-  }
-
-  .user-image {
-    width: 35px;
-    height: 35px;
-  }
+app-profile-card {
+  animation: fadeIn 0.3s ease-out;
 }

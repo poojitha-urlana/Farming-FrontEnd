@@ -1,105 +1,122 @@
+.user-profile{
+  margin-top: 7%;
+}
 .container {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
-  color: #2c3e50;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  position: relative;
+  color: #37414b;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
   padding-bottom: 0.5rem;
-}
-
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #3498db;
+  border-bottom: 3px solid #96be25;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .card {
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   padding: 2rem;
-  margin-top: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border-left: 5px solid #96be25;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
-h3 {
-  color: #3498db;
-  font-size: 1.5rem;
+.card h3 {
+  color: #37414b;
+  font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #ecf0f1;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
 }
 
-p {
-  color: #34495e;
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #96be25;
+  border-radius: 3px;
+}
+
+.card p {
+  color: #555;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid #eee;
+  transition: all 0.3s ease;
 }
 
-strong {
-  color: #2c3e50;
-  font-weight: 600;
+.card p:hover {
+  border-left: 2px solid #96be25;
+  padding-left: 1.5rem;
+}
+
+.card p strong {
+  color: #37414b;
+  font-weight: 500;
   display: inline-block;
   min-width: 80px;
 }
 
-/* Loading state */
-div[ngIf="!user"] {
+.loading-message {
   text-align: center;
-  padding: 2rem;
-  color: #7f8c8d;
+  color: #96be25;
   font-size: 1.2rem;
+  padding: 2rem;
+  background: rgba(150, 190, 37, 0.1);
+  border-radius: 8px;
+  animation: pulse 2s infinite;
 }
 
-/* Responsive design */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
+    margin: 1rem;
   }
   
   .card {
     padding: 1.5rem;
   }
   
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
   
-  h3 {
-    font-size: 1.2rem;
+  .card h3 {
+    font-size: 1.5rem;
   }
   
-  strong {
-    min-width: 70px;
-    display: block;
-    margin-bottom: 0.3rem;
+  .card p {
+    font-size: 1rem;
   }
 }

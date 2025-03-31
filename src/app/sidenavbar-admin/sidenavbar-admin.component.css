@@ -1,119 +1,157 @@
 .nav__cont {
-  position: absolute;
-  top: 12%;
-  width: 90px; 
-  top: 10;
-  height: 110vh;
+  position: fixed;
+  margin-top: 48px;
+  width: 80px;
+  top: 0;
+  left: 0;
+  height: 100vh;
   z-index: 100;
-  background-color: #96be25;
-  box-shadow: 5px 5px 5px #939393;
+  background: linear-gradient(180deg, #96be25, #3bd145);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: width 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav__cont:hover {
   width: 250px;
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
 }
-
 
 .nav {
   list-style-type: none;
-  color: white;
+  padding: 0;
+  margin-top: 10%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
 }
 
 .nav__items {
-  padding-bottom: 2rem;
-  font-size: 25px; 
-  font-family: 'Roboto';
+  padding: 1rem 0;
+  margin-top: 8%;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav__items:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav__items:hover .svg,
 .nav__items:hover a {
-  color: #37414b;
+  color: #fff;
+  transform: translateX(5px);
 }
 
-.nav__items:hover {
-  background-color: #96be25;
-}
-
-svg {
-  width: 26px;
-  height: 26px;
-  position: relative;
-  left: -25px;
-  cursor: pointer;
-}
-
-a {
-  position: relative;
-  display: block;
-  top: -25px;
-  padding-left: 35px;
-  padding-right: 15px;
+.nav__items .svg {
+  width: 24px;
+  height: 24px;
+  margin: 0 28px;
+  color: white;
   transition: all 0.3s ease;
-  margin-left: 25px;
-  margin-right: 10px;
+}
+
+.nav__items a {
+  color: white;
   text-decoration: none;
-  color: white;
-  font-family: 'Roboto';
-  font-weight: 150;
-  font-size: 0.8em;
+  font-weight: 400;
+  font-size: 0.9em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-20px);
+  position: absolute;
+  left: 80px;
 }
 
-h1 {
-  margin-top: 6rem;
-  margin-left: 80px;
-  text-align: center;
-  font-family: 'Roboto';
-  font-weight: 100;
-  font-size: 4rem;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 6px;
-  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+.nav__cont:hover .nav__items a {
+  opacity: 1;
+  transform: translateX(0);
+  position: static;
+  margin-left: 10px;
 }
 
+/* Active link styling */
+.nav__items a.router-link-active {
+  font-weight: 600;
+  color: #fff;
+}
+
+.nav__items a.router-link-active + .svg {
+  color: #fff;
+}
+
+/* Menu button for mobile */
 .menu-button {
   display: none;
   font-size: 1.5rem;
-  background-color: transparent;
+  background-color: #96be25;
   color: white;
   border: none;
-  padding: 10px;
+  border-radius: 4px;
+  padding: 10px 15px;
   position: fixed;
-  top: 0px;
+  top: 10px;
   left: 10px;
-  z-index: 100;
+  z-index: 101;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
+.menu-button:hover {
+  background-color: #7a9f1e;
+  transform: scale(1.05);
+}
 
-
-  @media screen and (max-width: 600px) {
-    /* Hide sidebar, show menu button */
-    .nav__cont {
-      display: none;
-    }
-  
-    .menu-button {
-      display: block;
-    }
-
-    .nav__cont.responsive {
-      display: block;
-      width: 100%;
-      height: auto;
-      position: relative;
-      background-color: #37414b;
-    }
-  
-    .nav {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .nav__items {
-      text-align: left;
-      padding: 1rem;
-    }
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .nav__cont {
+    width: 0;
+    transition: width 0.3s ease;
   }
+  
+  .nav__cont.responsive {
+    width: 250px;
+    display: flex;
+  }
+  
+  .nav__cont.responsive .nav__items a {
+    opacity: 1;
+    transform: translateX(0);
+    position: static;
+    margin-left: 10px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+  
+  .nav__items {
+    padding: 1rem;
+  }
+}
+
+/* Add a nice hover effect for the entire nav item */
+.nav__items::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav__items:hover::after {
+  width: 80%;
+  left: 10%;
+  background-color: rgba(255, 255, 255, 0.7);
+}

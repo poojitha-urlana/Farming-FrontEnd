@@ -1,109 +1,151 @@
+/* Farm Management Styles */
+.farmManage{
+  margin-top: 7%;
+  margin-left: 7%;
+}
 .farm-container {
-  max-width: 1200px; /* Max width for the container */
-  margin: 0 auto; /* Center the container */
-  padding: 20px; /* Padding around the container */
-  margin-top: 8.5%;
-  margin-left: 10%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .farm-title {
-  text-align: center; /* Center the title */
-  margin-bottom: 30px; /* Space below the title */
-  font-size: 2em; /* Title size */
-  color: #37414b; /* Dark Blue-Grey for the title */
+  color: #37414b;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #96be25;
+  display: inline-block;
 }
 
 .farm-grid {
-  display: flex; /* Flexbox layout */
-  flex-wrap: wrap; /* Allow cards to wrap */
-  gap: 20px; /* Space between cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .farm-card {
-  background-color: #ffffff; /* White background for cards */
-  border: 1px solid #D3D3D3; /* Light Gray border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  width: calc(33.33% - 20px); /* Width for three cards per row */
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   display: flex;
-  height: auto;
-  flex-direction: column; /* Column layout inside the card */
+  flex-direction: column;
+}
+
+.farm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .farm-card-body {
-  padding: 30px; /* Padding inside the card body */
+  padding: 1.5rem;
+  flex-grow: 1;
 }
 
 .farm-card-title {
-  font-size: 1.5em; /* Title size */
-  color: #37414b; /* Dark Blue-Grey for titles */
-  margin-bottom: 10px; /* Space below title */
+  color: #37414b;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .farm-card-text {
-  margin: 5px 0; /* Space between text lines */
+  color: #555;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.farm-card-text strong {
+  color: #37414b;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .farm-card-footer {
-  display: flex; /* Flexbox for footer */
-  justify-content: center; /* Center buttons */
-  padding: 10px; /* Padding for footer */
-  background-color: #F5F5F5; /* Light Gray background */
-  border-top: 1px solid #D3D3D3; /* Top border */
-  border-radius: 5px;
+  display: flex;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
 .farm-button {
-  padding: 10px 15px; 
-  margin: 0 5px; /* Space between buttons */
-  border: none; /* No border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 0.9em; /* Button font size */
-  background-color: #96be25;
+  flex: 1;
+  padding: 0.6rem;
+  margin: 0 0.3rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.farm-button.edit {
+  background-color: #3498db;
   color: white;
-  font-size: 18px;
-  font-weight: 100;
 }
-.farm-btn {
-  background-color: #96be25;
-  margin-left: 30%;
-  padding: 10px 15px; /* Button padding */
-  border: none; /* No border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  background-color: #12abe7;
+
+.farm-button.delete {
+  background-color: #e74c3c;
   color: white;
-  font-size: 18px;
-  font-weight: 100;
-}
-.edit {
-  background-color: #96be25; /* Green for edit button */
-  color: #ffffff; /* White text */
 }
 
-.delete {
-  background-color: #dc3545; /* Red for delete button */
-  color: #ffffff; /* White text */
+.farm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.edit:hover {
-  background-color: #85a020; 
+.farm-button.edit:hover {
+  background-color: #2980b9;
 }
 
-.delete:hover {
-  background-color: #c82333; 
+.farm-button.delete:hover {
+  background-color: #c0392b;
 }
 
+.farm-btn.add {
+  background: linear-gradient(180deg, #96be25, #3bd145);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
 
+.farm-btn.add:hover {
+  background-color: #7a9f1e;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(150, 190, 37, 0.4);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .farm-card {
-    width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  .farm-grid {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 480px) {
-  .farm-card {
-    width: 100%; /* Full width on very small screens */
+  
+  .farm-card-footer {
+    flex-direction: column;
+  }
+  
+  .farm-button {
+    width: 100%;
+    margin: 0.3rem 0;
   }
 }
