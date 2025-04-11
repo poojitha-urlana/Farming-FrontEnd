@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface SensorData {
@@ -15,35 +15,19 @@ export interface SensorData {
   providedIn: 'root'
 })
 export class SensorDataService {
-  private apiUrl = 'http://localhost:8899/api/sensor-data'; // Backend URL
+  private baseUrl = 'http://localhost:8899/api/sensor-data';  // Adjust if port differs
 
   constructor(private http: HttpClient) {}
 
-  // Fetch all sensor data with pagination
-  getSensorData(page: number = 0, size: number = 10): Observable<any> {
-    const params = new HttpParams()
-      .set('page', page.toString())
-      .set('size', size.toString());
-    return this.http.get<any>(`${this.apiUrl}/alldata`, { params });
+  getLatestData(): Observable<SensorData> {
+    return this.http.get<SensorData>(`${this.baseUrl}/latest`);
   }
 
-  // Fetch the latest sensor data
-  getLatestSensorData(): Observable<SensorData> {
-    return this.http.get<SensorData>(`${this.apiUrl}/latest`);
+  getAllData(page: number = 0, size: number = 10): Observable<SensorData[]> {
+    return this.http.get<SensorData[]>(`${this.baseUrl}/alldata?page=${page}&size=${size}`);
   }
 
-  // Fetch sensor data for the last week
-  getSensorDataForWeek(): Observable<SensorData[]> {
-    return this.http.get<SensorData[]>(`${this.apiUrl}/data/week`);
-  }
-
-  // Fetch sensor data for the last month
-  getSensorDataForMonth(): Observable<SensorData[]> {
-    return this.http.get<SensorData[]>(`${this.apiUrl}/data/month`);
-  }
-
-  // Save new sensor data
-  saveSensorData(sensorData: SensorData): Observable<SensorData> {
-    return this.http.post<SensorData>(`${this.apiUrl}/post`, sensorData);
+  postSensorData(data: SensorData): Observable<string> {
+    return this.http.post(`${this.baseUrl}/post`, data, { responseType: 'text' });
   }
 }

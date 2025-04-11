@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SidenavbarAdminComponent } from './sidenavbar-admin/sidenavbar-admin.component';
@@ -21,7 +21,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserDataChartComponent } from './user-data-chart/user-data-chart.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { TreatmentComponent } from './treatment/treatment.component';
-import { SensorVisualComponent } from './sensor-visual/sensor-visual.component';
+import { SensorDataVisualizationComponent } from './sensor-data-visualization/sensor-data-visualization.component';
+
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -31,6 +32,7 @@ export const routes: Routes = [
     { path: 'login-user', component: LoginUserComponent },
     { path: 'login-admin', component: LoginAdminComponent },
     { path: 'register-user', component: RegisterUserComponent },
+    {path:'sensor-data', component:SensorDataVisualizationComponent},
     { path: 'dash-board-user', component: DashBoardUserComponent },
     { path: 'dash-board-admin', component: DashBoardAdminComponent },
     { path: 'sidenavbar-admin', component: SidenavbarAdminComponent },
@@ -45,7 +47,6 @@ export const routes: Routes = [
     { path: 'add-farm', component: AddFarmComponent },
     { path: 'treatment', component: TreatmentComponent },
     { path: 'crop-recomendation', component: CropRecomendationComponent },
-    { path: 'sensor-data', component: SensorVisualComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }, // Catch-all for unknown routes
 ];
 
