@@ -1,0 +1,116 @@
+/* User Management Styles */
+.table{
+  margin-top: 7%;
+  margin-left: 7%;
+}
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  color: #37414b;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #96be25;
+  display: inline-block;
+}
+
+.responsive-table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  background: linear-gradient(135deg, #37414b 0%, #2a333a 100%);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  padding: 1.2rem 1rem;
+}
+
+.table-row {
+  background-color: white;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row:hover {
+  background-color: #f9f9f9;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.col {
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.col-1 { flex: 0.5; }
+.col-4 { flex: 0.8; }
+
+.deleteUser {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.deleteUser:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+  .table-header {
+    display: none;
+  }
+  
+  .table-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .col {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .col::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #37414b;
+    margin-right: 1rem;
+  }
+  
+  .deleteUser {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}

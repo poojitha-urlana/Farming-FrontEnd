@@ -1,0 +1,17 @@
+<div *ngIf="dataLoaded" class="charts-container">
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="barChartOptions"
+    class="chart"
+  ></highcharts-chart>
+
+  <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="pieChartOptions"
+    class="chart"
+  ></highcharts-chart>
+</div>
+
+<div *ngIf="!dataLoaded">
+  <p>Loading data...</p>
+</div>

@@ -1,0 +1,225 @@
+/* Header Styles */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #37414b 0%, #2a333a 100%);
+  transition: all 0.3s ease;
+}
+
+.header {
+  padding: 15px 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #96be25;
+  transform: translateX(5px);
+}
+
+.logofarm {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  border: 2px solid #96be25;
+  transition: all 0.3s ease;
+}
+
+.logo:hover .logofarm {
+  transform: rotate(10deg);
+  box-shadow: 0 0 15px rgba(150, 190, 37, 0.5);
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link:hover {
+  color: #96be25;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link fa-icon {
+  font-size: 1.1rem;
+}
+
+/* User/Admin Styles */
+.user, .admin {
+  position: relative;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.user-name:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #96be25;
+}
+
+.user-name .img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #96be25;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.user-name:hover .img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(150, 190, 37, 0.5);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  color: #96be25;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #37414b 0%, #2a333a 100%);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+    z-index: 999;
+  }
+  
+  .nav.active {
+    transform: translateY(0);
+  }
+  
+  .nav-link {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 0;
+    justify-content: center;
+  }
+  
+  .user, .admin {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .user-name {
+    justify-content: center;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .logofarm {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .header {
+    padding: 10px 0;
+  }
+}
+
+/* Animation for profile card */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+app-profile-card {
+  animation: fadeIn 0.3s ease-out;
+}

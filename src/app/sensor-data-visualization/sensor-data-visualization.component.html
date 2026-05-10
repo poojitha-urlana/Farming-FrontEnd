@@ -1,0 +1,51 @@
+Latest Sensor Data Card
+<section class="latest-data">
+    <h2 class="section-title">🌿 Latest Sensor Data</h2>
+  
+    <div *ngIf="latestData" class="card">
+      <div class="card-row"><strong>🌡️ Temperature:</strong> {{ latestData.temperature }} °C</div>
+      <div class="card-row"><strong>💧 Humidity:</strong> {{ latestData.humidity }} %</div>
+      <div class="card-row"><strong>🌱 Soil Moisture:</strong> {{ latestData.soilMoisture }}</div>
+      <div class="card-row"><strong>⚡ Relay State:</strong> 
+        <span [class.on]="latestData.relayState" [class.off]="!latestData.relayState">
+          {{ latestData.relayState ? 'ON' : 'OFF' }}
+        </span>
+      </div>
+      <div class="card-row"><strong>⏱️ Timestamp:</strong> {{ latestData.timestamp | date:'medium' }}</div>
+    </div>
+  </section>
+  
+ 
+  <section class="all-data">
+    <h2 class="section-title">📊 All Sensor Data</h2>
+  
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Temperature (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Soil Moisture</th>
+            <th>Relay</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of allData">
+            <td>{{ data.id }}</td>
+            <td>{{ data.temperature }}</td>
+            <td>{{ data.humidity }}</td>
+            <td>{{ data.soilMoisture }}</td>
+            <td>
+              <span [class.on]="data.relayState" [class.off]="!data.relayState">
+                {{ data.relayState ? 'ON' : 'OFF' }}
+              </span>
+            </td>
+            <td>{{ data.timestamp | date:'medium' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  

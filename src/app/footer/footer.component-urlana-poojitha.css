@@ -1,0 +1,33 @@
+footer {
+  background-color: #37414b; 
+  width: auto;
+  color: #FFFFFF; 
+  padding: 20px;
+  text-align: center; 
+  position: relative; 
+}
+
+.footer-links {
+  margin-bottom: 10px; 
+}
+
+.footer-links a {
+  color: #96be25; 
+  text-decoration: none; 
+  margin: 0 15px; 
+  transition: color 0.3s; 
+}
+
+.footer-links a:hover {
+  color: #D3D3D3; 
+}
+
+footer p {
+  margin: 0; 
+  font-size: 14px; 
+}
+@media screen and (max-width: 600px) {
+  footer {
+    width: 100%;
+  }
+}

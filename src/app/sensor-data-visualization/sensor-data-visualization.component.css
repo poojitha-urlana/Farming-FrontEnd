@@ -1,0 +1,101 @@
+/* General Styling */
+.latest-data, .all-data {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .section-title {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Latest Data Card */
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+  }
+  
+  .card-row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Relay State Indicators */
+  .on {
+    color: #27ae60;
+    font-weight: bold;
+  }
+  
+  .off {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  /* Table Styling */
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .data-table th {
+    background: #3498db;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .data-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .data-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .data-table tr:hover {
+    background-color: #f1f9ff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .card-row {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    .section-title {
+      font-size: 1.25rem;
+    }
+    
+    .data-table th, 
+    .data-table td {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+  
