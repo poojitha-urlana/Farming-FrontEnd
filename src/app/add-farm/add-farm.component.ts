@@ -22,8 +22,9 @@ export class AddFarmComponent {
     soilType: '',
     cropName: '',
     status: 'Active', 
-    farmSize: '',
-    sensorData: [] 
+    farmSize: 0,
+    sensorData: [] ,
+    soilQuality: 0
   };
 
   constructor(private farmService: FarmService, private router: Router) {}

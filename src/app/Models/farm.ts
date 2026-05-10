@@ -8,6 +8,7 @@ export interface Farm {
   soilType: string;
   cropName: string;
   status: string;
-  farmSize: string;
+  farmSize: number;
   sensorData: SensorData[];
+  soilQuality: number;
 }

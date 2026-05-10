@@ -6,11 +6,12 @@ import { CommonModule } from '@angular/common';
 import { SidenavbarAdminComponent } from './sidenavbar-admin/sidenavbar-admin.component';
 import { SidenavbarUserComponent } from './sidenavbar-user/sidenavbar-user.component';
 import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, HeaderComponent,
+  imports: [RouterModule,HighchartsChartModule, HeaderComponent,
     SidenavbarAdminComponent,
      CommonModule,
      MatIconModule,
@@ -40,11 +41,7 @@ export class AppComponent {
           this.showUserSidebar = ['/dash-board-user', '/user-farm-list', '/crop-health', '/farms', '/farms/:id','/user-profile' ,'/crop-recomendation', '/farmdetails'].some(path => currentUrl.startsWith(path)) || currentUrl.includes('/farms/');
           this.showAdminSidebar = ['/dash-board-admin', '/farmmanagement', '/user-management', '/edit-farm' ,'/add-farm' ].some(path => currentUrl.startsWith(path));
           this.showFooter =[
-            '/dash-board-user', '/user-farm-list',
-             '/crop-health', '/farms', '/farms/:id',
-             '/dash-board-admin','/farmmanagement', 
-             '/user-management', '/edit-farm','/add-farm',
-             '/crop-recomendation',
+            
             ].some(path => currentUrl.startsWith(path)) ;
       }
     });

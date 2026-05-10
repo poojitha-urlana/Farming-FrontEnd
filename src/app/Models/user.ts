@@ -4,5 +4,6 @@ export interface User {
   password: string;         // User's password (usually won't be sent in responses)
   email: string;            // Email address of the user
   fullName: string;         // Full name of the user
-  confirmPassword?: string;  // For validation purposes, not persisted in backend
+  confirmPassword?: string;
+  active?: boolean;
 }

@@ -3,4 +3,18 @@
     width: 100%;
     height: 100%;
   }
+  .charts-container {
+    display: flex; 
+    margin-top: 2%;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px; 
+  }
+  
+  .chart {
+    margin-left: 10%;
+    box-shadow: 5px 5px 5px #939393;
+    width: 35%; 
+    height: auto; 
+  }
   

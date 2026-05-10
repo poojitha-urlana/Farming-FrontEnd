@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user-farm-list',
   standalone: true,
-  imports: [FormsModule, CommonModule, HttpClientModule ,RouterModule],
+  imports: [FormsModule, CommonModule, HttpClientModule, RouterModule],
   templateUrl: './user-farm-list.component.html',
   styleUrls: ['./user-farm-list.component.css'],
 })
@@ -19,20 +19,17 @@ export class UserFarmListComponent implements OnInit {
 
   constructor(private farmService: FarmService, private router: Router) {}
 
-  
   ngOnInit(): void {
     this.getFarms();
   }
 
- 
   getFarms(): void {
     this.farmService.getAllFarms().subscribe((data: Farm[]) => {
       this.farms = data;
     });
   }
-  
-  navigateFarmdetails(){
-    this.router.navigate(['/farmdetails']);
+
+  navigateFarmdetails(farmId: number): void {
+    this.router.navigate([`/farmdetails/${farmId}`]); // ✅ Correctly passing the farmId
   }
-  
 }
